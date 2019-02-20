@@ -19,10 +19,17 @@ const IndexPage = () => (
       <h3 style={{
         color: '#fff',
         fontWeight: 100,
-        maxWidth: '28rem'
+        maxWidth: '28rem',
+        marginBottom: 0
       }}>I build experiences alongside amazing people. Contact me now to hire me for your next project.</h3>
       <div style={{ width: '175px', float: 'right', borderRadius: '50%', overflow: 'hidden' }}>
         <Image />
+      </div>
+      <div style={{ marginTop: '600px', textAlign: 'right' }}>
+        <h2 style={{ marginBottom: '3rem' }}>ABOUT ME</h2>
+        <p>I am a self-taught developer with over 2 years of experience bringing projects to life.
+          I leverage the latest tools and frameworks to deliver intuitive experiences.
+        </p>
       </div>
     </div>
   </Layout>
