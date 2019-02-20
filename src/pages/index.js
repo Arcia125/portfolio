@@ -4,6 +4,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { PageGradient } from "../components/page-gradient/index";
 import Image from "../components/image";
+import illustration from "../images/website-illustration-plain.png";
 
 const IndexPage = () => (
   <Layout>
@@ -27,10 +28,10 @@ const IndexPage = () => (
         I build web apps alongside amazing people.
         Contact me now to hire me for your next project.
       </h3>
-      <div style={{ width: '245px', borderRadius: '50%', overflow: 'hidden', position: 'relative', right: '-100%', bottom: '200px' }}>
-        <Image />
+      <img className="page-illustration" src={illustration} />
+      <div style={{}}>
       </div>
-      <div style={{ marginTop: '15rem', textAlign: 'right' }}>
+      <div style={{ marginTop: '3rem', textAlign: 'right' }}>
         <h2 style={{ marginBottom: '3rem' }}>ABOUT ME</h2>
         <p style={{
           lineHeight: '2.2rem',

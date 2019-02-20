@@ -624,3 +624,27 @@ pre tt:after {
     font-size: 100%;
   }
 }
+
+.page-illustration {
+  /* transform: ; */
+  transform: perspective(2005px) rotateY(20deg) rotateX(12deg) rotateZ(-9deg) skewY(-5deg) skewX(9deg);
+  filter: drop-shadow(-10px 10px 0px #9d9d9f);
+  position: relative;
+  /* right: -25rem;
+  top: -15rem; */
+  right: -50%;
+  top: -12rem;
+  transition: 350ms cubic-bezier(0.18, 0.89, 0.32, 1.28);
+}
+
+.page-illustration:hover {
+  transform: perspective(2005px) rotateY(0deg) rotateX(0deg);
+  filter: drop-shadow(0px 0px 0px #9d9d9f);
+}
+
+@media only screen and (max-width: 1350px) {
+  .page-illustration {
+    top: 0;
+    right: -20%;
+  }
+}
