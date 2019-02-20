@@ -3,10 +3,12 @@ import { Link } from "gatsby"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import { PageGradient } from "../components/page-gradient";
 
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" keywords={[`gatsby`, `application`, `react`, `kevin`, `hallett`, `developer`, `webapp`]} />
+    <PageGradient />
     <div style={{
       marginBottom: '70vh'
     }}>
