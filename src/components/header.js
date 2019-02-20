@@ -5,15 +5,28 @@ import React from "react"
 const Header = ({ siteTitle }) => (
   <header
     style={{
-      background: `rebeccapurple`,
       marginBottom: `1.45rem`,
     }}
   >
     <div
       style={{
+        top: '-150px',
+        height: '70vh',
+        width: '100%',
+        position: 'absolute',
+        transform: 'skewY(-5deg)',
+        overflow: 'hidden',
+        zIndex: '-1'
+      }}><div style={{
+        background: 'linear-gradient(to bottom, #1d1035 0%,#6e3cca 25%,#46b6ea 100%)',
+        height: '150%',
+        transform: 'skewY(5deg)'
+      }}/></div>
+    <div
+      style={{
         margin: `0 auto`,
         maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
+        padding: `.5rem 1.0875rem`,
       }}
     >
       <h1 style={{ margin: 0 }}>
