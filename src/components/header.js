@@ -1,6 +1,7 @@
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
+import { layout } from "../constants/layout";
 
 const Header = ({ siteTitle }) => (
   <header
@@ -11,8 +12,8 @@ const Header = ({ siteTitle }) => (
     <div
       style={{
         margin: `0 auto`,
-        maxWidth: 1080,
-        padding: `.5rem 0`,
+        maxWidth: layout.maxWidth,
+        padding: layout.padding,
       }}
     >
       <h1 style={{ margin: 0 }}>

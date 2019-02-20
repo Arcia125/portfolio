@@ -4,6 +4,7 @@ import { StaticQuery, graphql } from "gatsby"
 
 import Header from "./header"
 import "./layout.css"
+import { layout } from "../constants/layout";
 
 const Layout = ({ children }) => (
   <StaticQuery
@@ -17,13 +18,13 @@ const Layout = ({ children }) => (
       }
     `}
     render={data => (
-      <>
+      <div>
         <Header siteTitle={data.site.siteMetadata.title} />
         <div
           style={{
             margin: `0 auto`,
-            maxWidth: 1080,
-            padding: `0px 1.0875rem 1.45rem`,
+            maxWidth: layout.maxWidth,
+            padding: layout.padding,
             paddingTop: 0,
           }}
         >
@@ -34,7 +35,7 @@ const Layout = ({ children }) => (
             <a href="https://www.gatsbyjs.org">Gatsby</a>
           </footer>
         </div>
-      </>
+      </div>
     )}
   />
 )

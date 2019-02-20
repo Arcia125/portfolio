@@ -1,18 +1,10 @@
 import React from 'react';
+import classnames from 'classnames';
 
-const containerStyles = {
-  top: '-30vh',
-  left: 0,
-  height: '75vh',
-  width: '100%',
-  position: 'absolute',
-  transform: 'skewY(-15deg)',
-  overflow: 'hidden',
-  zIndex: '-1'
-};
+import './page-gradient.css';
 
-const PageGradient = ({ color1, color1Stop, color2, color2Stop, color3, color3Stop }) => (
-  <div style={containerStyles}><div style={{
+const PageGradient = ({ className, color1, color1Stop, color2, color2Stop, color3, color3Stop }) => (
+  <div className={classnames(className, 'page-gradient')}><div style={{
     background: `linear-gradient(${color1} ${color1Stop}, ${color2} ${color2Stop}, ${color3} ${color3Stop})`,
     height: '150%',
     transform: 'skewY(15deg)'
