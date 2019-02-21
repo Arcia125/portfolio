@@ -1,0 +1,14 @@
+.about-me-section {
+  text-align: right;
+  position: relative;
+  left: 6rem;
+  bottom: 15rem;
+  max-width: 25rem;
+}
+
+@media only screen and (max-width: 900px) {
+  .about-me-section {
+    left: 0;
+    bottom: 0;
+  }
+}
