@@ -26,7 +26,7 @@ const DesktopIllustration = ({ className }) => (
         }
       }
     `}
-    render={data => <Img className={className} fluid={data.placeholderImage.childImageSharp.fluid} />}
+    render={data => <Img critical fadeIn={false} className={className} fluid={data.placeholderImage.childImageSharp.fluid} />}
   />
 )
 export {
