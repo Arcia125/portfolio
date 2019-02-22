@@ -5,6 +5,7 @@ html {
   font-family: 'Roboto', sans-serif;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
+  overflow-x: hidden;
 }
 body {
   margin: 0;
@@ -625,52 +626,6 @@ pre tt:after {
   }
 }
 
-.page-illustration-container {
-  position: relative;
-  left: 40rem;
-  bottom: 10rem;
-  transform: perspective(2005px) rotateY(20deg) rotateX(12deg) rotateZ(-9deg) skewY(-5deg) skewX(9deg);
-}
-
-.page-illustration {
-  position: relative;
-  box-shadow: -5px 3px 2px 0px #464656;
-  transition: 600ms cubic-bezier(0.18, 0.89, 0.32, 1.28);
-}
-
-.page-illustration:hover {
-  transform: translateY(-20px) translateX(25px) translateZ(50px);
-  box-shadow: -25px 15px 20px 5px #464656;
-}
-
-.desktop-illustration {
-  width: 70%;
-  right: 0%;
-  top: 0;
-}
-
-.mobile-illustration {
-  position: relative;
-  width: 40%;
-  right: -30%;
-  top: 0rem;
-  margin-bottom: -500px;
-}
-
-@media only screen and (max-width: 1350px) {
-  .page-illustration-container {
-    left: 5rem;
-    bottom: 0;
-  }
-  .page-illustration {
-  }
-  .desktop-illustration {
-    top: 0rem;
-    right: -10%;
-  }
-  .mobile-illustration {
-    top: 2rem;
-    right: -40%;
-    margin-bottom: 7rem;
-  }
+.layout-container footer {
+  margin-top: 20rem;
 }

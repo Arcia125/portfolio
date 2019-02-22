@@ -1,0 +1,48 @@
+.page-illustration-container {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  right: 4rem;
+  top: 10rem;
+  transform: perspective(2005px) rotateY(7deg) rotateX(19deg) rotateZ(-18deg) skewX(1deg) skewY(1deg);
+}
+
+.page-illustration {
+  position: relative;
+  box-shadow: -5px 3px 2px 0px #464656;
+  transition: 600ms cubic-bezier(0.18, 0.89, 0.32, 1.28);
+  align-self: flex-start;
+}
+
+.page-illustration:hover {
+  transform: translateY(-20px) translateX(25px) translateZ(50px);
+  box-shadow: -25px 15px 20px 5px #464656;
+}
+
+.desktop-illustration {
+  width: 80%;
+}
+
+.mobile-illustration {
+  position: relative;
+  width: 40%;
+  align-self: center;
+  left: 5rem;
+}
+
+@media only screen and (max-width: 1350px) {
+  .page-illustration-container {
+    left: 5rem;
+    top: 27rem;
+  }
+  .page-illustration {
+  }
+  .desktop-illustration {
+    top: 0rem;
+    right: -10%;
+  }
+  .mobile-illustration {
+    top: 1rem;
+    left: 0rem;
+  }
+}

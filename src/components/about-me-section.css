@@ -1,9 +1,10 @@
 .about-me-section {
   text-align: right;
   position: relative;
-  left: 6rem;
-  bottom: 15rem;
   max-width: 25rem;
+  margin-left: auto;
+  margin-bottom: 10rem;
+  right: 20rem;
 }
 
 .about-me-section h2 {

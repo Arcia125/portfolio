@@ -2,6 +2,7 @@ import React from 'react';
 
 import illustration from '../images/web-illustration-dark-gradient.webp';
 import mobileIllustration from '../images/mobile-illustration-dark-gradient.webp';
+import './header-illustrations.css';
 
 const HeaderIllustrations = () => (
   <div className="page-illustration-container">

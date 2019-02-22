@@ -8,6 +8,7 @@
   height: 9rem;
   border-radius: 4px;
   margin-right: 2rem;
+  align-self: center;
 }
 
 .trait-display h2 {
@@ -17,4 +18,16 @@
 .trait-display p {
   max-width: 30rem;
   line-height: 2.2rem;
+}
+
+@media only screen and (max-width: 1350px) {
+  .trait-display-title-container {
+    flex-direction: column;
+  }
+  .trait-display {
+    text-align: center;
+  }
+  .trait-display-image {
+    margin: 0 0 2rem 0;
+  }
 }
