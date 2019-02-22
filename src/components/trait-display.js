@@ -7,9 +7,11 @@ const TraitDisplay = ({ title, subtext, image }) => (
   <div className="trait-display">
     <div className="trait-display-title-container">
       <img className="trait-display-image" src={image} />
-      <h2>{title}</h2>
+      <div>
+        <h2>{title}</h2>
+        {subtext && (<p>{subtext}</p>)}
+      </div>
     </div>
-    {subtext && (<p>{subtext}</p>)}
   </div>
 );
 
