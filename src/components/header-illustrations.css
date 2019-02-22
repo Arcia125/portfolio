@@ -10,14 +10,14 @@
 
 .page-illustration {
   position: relative;
-  box-shadow: -5px 3px 2px 0px #464656;
+  box-shadow: -5px 3px 2px 0px #46465699;
   transition: 600ms cubic-bezier(0.18, 0.89, 0.32, 1.28);
   align-self: flex-start;
 }
 
 .page-illustration:hover {
   transform: translateY(-20px) translateX(25px) translateZ(50px);
-  box-shadow: -25px 15px 20px 5px #464656;
+  box-shadow: -25px 15px 20px 5px #46465699;
 }
 
 .desktop-illustration {
