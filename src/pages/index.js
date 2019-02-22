@@ -3,9 +3,6 @@ import React from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { PageGradient } from "../components/page-gradient/index";
-import Image from "../components/image";
-import illustration from "../images/web-illustration-dark-gradient.png";
-import mobileIllustration from "../images/mobile-illustration-dark-gradient.png";
 import { HeaderIllustrations } from "../components/header-illustrations";
 import { AboutMeSection } from "../components/about-me-section";
 
