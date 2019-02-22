@@ -1,0 +1,17 @@
+.trait-display-title-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: row;
+}
+
+.trait-display-image {
+  height: 100px;
+  border-radius: 4px;
+  margin-right: 2rem;
+}
+
+.trait-display p {
+  max-width: 30rem;
+  line-height: 2.2rem;
+}

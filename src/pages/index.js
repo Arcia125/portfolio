@@ -5,6 +5,8 @@ import SEO from "../components/seo"
 import { PageGradient } from "../components/page-gradient/index";
 import { HeaderIllustrations } from "../components/header-illustrations";
 import { AboutMeSection } from "../components/about-me-section";
+import { TraitDisplay } from "../components/trait-display";
+import cleanCodeIllustration from '../images/clean-code-illustration.webp';
 
 const IndexPage = () => (
   <Layout>
@@ -30,6 +32,7 @@ const IndexPage = () => (
       </h3>
       <HeaderIllustrations />
       <AboutMeSection />
+      <TraitDisplay image={cleanCodeIllustration} title="Clean Code" subtext="I prioritize maintainability and readability of project source code. This enables new developers to approach the codebase with ease."/>
     </div>
   </Layout>
 )
