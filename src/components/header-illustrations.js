@@ -1,13 +1,14 @@
 import React from 'react';
+import classNames from 'classnames';
 
-import illustration from '../images/web-illustration-dark-gradient.webp';
-import mobileIllustration from '../images/mobile-illustration-dark-gradient.webp';
 import './header-illustrations.css';
+import { DesktopIllustration } from './desktop-illustration';
+import { MobileIllustration } from './mobile-illustration';
 
 const HeaderIllustrations = () => (
   <div className="page-illustration-container">
-    <img alt="desktop webapp illustration" className="page-illustration desktop-illustration" src={illustration} />
-    <img alt="mobile webapp illustration" className="page-illustration mobile-illustration" src={mobileIllustration} />
+    <DesktopIllustration className={classNames('page-illustration', 'desktop-illustration')} />
+    <MobileIllustration className={classNames('page-illustration', 'mobile-illustration')} />
   </div>
 );
 

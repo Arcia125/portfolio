@@ -13,20 +13,22 @@ import Img from "gatsby-image"
  * - `StaticQuery`: https://gatsby.app/staticquery
  */
 
-const Image = () => (
+const DesktopIllustration = ({ className }) => (
   <StaticQuery
     query={graphql`
       query {
-        placeholderImage: file(relativePath: { eq: "kevin-hallett.jpg" }) {
+        placeholderImage: file(relativePath: { eq: "web-illustration-dark-gradient.webp" }) {
           childImageSharp {
-            fluid(maxWidth: 600) {
+            fluid(maxWidth: 720) {
               ...GatsbyImageSharpFluid
             }
           }
         }
       }
     `}
-    render={data => <Img fluid={data.placeholderImage.childImageSharp.fluid} />}
+    render={data => <Img className={className} fluid={data.placeholderImage.childImageSharp.fluid} />}
   />
 )
-export default Image
+export {
+  DesktopIllustration
+};

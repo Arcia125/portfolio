@@ -6,7 +6,7 @@ import { PageGradient } from "../components/page-gradient/index";
 import { HeaderIllustrations } from "../components/header-illustrations";
 import { AboutMeSection } from "../components/about-me-section";
 import { TraitDisplay } from "../components/trait-display";
-import cleanCodeIllustration from '../images/clean-code-illustration.webp';
+import { CleanCodeIllustration } from "../components/clean-code-illustration";
 
 
 const IndexPage = () => (
@@ -36,7 +36,9 @@ const IndexPage = () => (
       </div>
         <AboutMeSection />
         <div>
-          <TraitDisplay image={cleanCodeIllustration} title="CLEAN CODE" subtext="I prioritize maintainability and readability of project source code. This enables new developers to approach the codebase with ease."/>
+          <TraitDisplay title="CLEAN CODE" subtext="I prioritize maintainability and readability of project source code. This enables new developers to approach the codebase with ease.">
+              <CleanCodeIllustration />
+          </TraitDisplay>
         </div>
     </Layout>
   </>

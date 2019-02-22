@@ -4,6 +4,7 @@
   position: absolute;
   right: 4rem;
   top: 10rem;
+  width: 900px;
   transform: perspective(2005px) rotateY(7deg) rotateX(19deg) rotateZ(-18deg) skewX(1deg) skewY(1deg);
 }
 
@@ -28,12 +29,14 @@
   width: 40%;
   align-self: center;
   left: 5rem;
+  top: 1.5rem;
 }
 
 @media only screen and (max-width: 1350px) {
   .page-illustration-container {
     left: 5rem;
     top: 27rem;
+    width: 200px;
   }
   .page-illustration {
   }
