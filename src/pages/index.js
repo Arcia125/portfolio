@@ -32,7 +32,7 @@ const IndexPage = () => (
       </h3>
       <HeaderIllustrations />
       <AboutMeSection />
-      <TraitDisplay image={cleanCodeIllustration} title="Clean Code" subtext="I prioritize maintainability and readability of project source code. This enables new developers to approach the codebase with ease."/>
+      <TraitDisplay image={cleanCodeIllustration} title="CLEAN CODE" subtext="I prioritize maintainability and readability of project source code. This enables new developers to approach the codebase with ease."/>
     </div>
   </Layout>
 )

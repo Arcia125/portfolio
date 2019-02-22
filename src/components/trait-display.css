@@ -10,6 +10,10 @@
   margin-right: 2rem;
 }
 
+.trait-display h2 {
+  margin-bottom: 2rem;
+}
+
 .trait-display p {
   max-width: 30rem;
   line-height: 2.2rem;
