@@ -1,13 +1,10 @@
 import React from 'react';
-import classnames from 'classnames';
 
 import './page-gradient.css';
 
 const PageGradient = ({ color1, color1Stop, color2, color2Stop, color3, color3Stop }) => (
-  <div style={{
+  <div className="page-gradient-background" style={{
     background: `linear-gradient(${color1} ${color1Stop}, ${color2} ${color2Stop}, ${color3} ${color3Stop})`,
-    height: '150%',
-    transform: 'skewY(15deg)'
   }}/>
 );
 

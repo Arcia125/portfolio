@@ -1,9 +1,8 @@
 import React from 'react';
-import classNames from 'classnames';
 
 import './trait-display.css';
 
-const TraitDisplay = ({ title, subtext, image, children }) => (
+const TraitDisplay = ({ title, subtext, children }) => (
   <div className="trait-display">
     <div className="trait-display-title-container">
       <div className="trait-display-image">
