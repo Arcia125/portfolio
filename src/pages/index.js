@@ -7,7 +7,7 @@ import { AboutMeSection } from "../components/about-me-section";
 import { Header } from "../components/header";
 import { TraitSection } from "../components/trait-section";
 import { CleanCodeIllustration } from "../components/clean-code-illustration";
-import { Trait } from "../models/Trait";
+import { Trait } from "../utilities/Trait";
 
 const traits = [
   new Trait('CLEAN CODE', 'I prioritize maintainability and readability of project source code. This enables new developers to approach the codebase with ease.', CleanCodeIllustration)
