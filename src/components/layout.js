@@ -2,7 +2,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import { StaticQuery, graphql } from "gatsby"
 
-import Header from "./header"
+import Nav from "./nav"
 import "./layout.css"
 import { layout } from "../constants/layout";
 
@@ -19,7 +19,7 @@ const Layout = ({ children }) => (
     `}
     render={data => (
       <div class="layout-container">
-        <Header siteTitle={data.site.siteMetadata.title} />
+        <Nav siteTitle={data.site.siteMetadata.title} />
         <div
           style={{
             margin: `0 auto`,

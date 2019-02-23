@@ -1,10 +1,13 @@
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
+
+import './nav.css';
 import { layout } from "../constants/layout";
 
-const Header = ({ siteTitle }) => (
-  <header
+const Nav = ({ siteTitle }) => (
+  <nav
+    className="main-site-navigation"
     style={{
       marginBottom: `1.45rem`,
     }}
@@ -16,7 +19,6 @@ const Header = ({ siteTitle }) => (
         padding: layout.padding,
       }}
     >
-      <h1 style={{ margin: 0 }}>
         <Link
           to="/"
           style={{
@@ -28,17 +30,16 @@ const Header = ({ siteTitle }) => (
         >
           {siteTitle}
         </Link>
-      </h1>
     </div>
-  </header>
+  </nav>
 )
 
-Header.propTypes = {
+Nav.propTypes = {
   siteTitle: PropTypes.string,
 }
 
-Header.defaultProps = {
+Nav.defaultProps = {
   siteTitle: ``,
 }
 
-export default Header
+export default Nav

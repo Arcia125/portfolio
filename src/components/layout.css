@@ -45,6 +45,7 @@ template {
   display: none;
 }
 a {
+  font-family: 'Roboto', sans-serif;
   background-color: transparent;
   -webkit-text-decoration-skip: objects;
 }
