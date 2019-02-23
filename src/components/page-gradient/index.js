@@ -3,12 +3,12 @@ import classnames from 'classnames';
 
 import './page-gradient.css';
 
-const PageGradient = ({ className, color1, color1Stop, color2, color2Stop, color3, color3Stop }) => (
-  <div className={classnames(className, 'page-gradient')}><div style={{
+const PageGradient = ({ color1, color1Stop, color2, color2Stop, color3, color3Stop }) => (
+  <div style={{
     background: `linear-gradient(${color1} ${color1Stop}, ${color2} ${color2Stop}, ${color3} ${color3Stop})`,
     height: '150%',
     transform: 'skewY(15deg)'
-  }}/></div>
+  }}/>
 );
 
 PageGradient.defaultProps = {
