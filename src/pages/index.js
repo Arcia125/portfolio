@@ -11,7 +11,11 @@ import { Trait } from "../models/trait";
 import { PortfolioPreview } from "../components/portfolio-preview";
 
 const traits = [
-  new Trait('CLEAN CODE', 'I prioritize maintainability and readability of project source code. This enables new developers to approach the codebase with ease.', CleanCodeIllustration)
+  new Trait({
+    title: 'CLEAN CODE',
+    subtext: 'I prioritize maintainability and readability of project source code. This enables new developers to approach the codebase with ease.',
+    ImageComponent: CleanCodeIllustration
+  })
 ];
 
 const projects = [
@@ -19,7 +23,22 @@ const projects = [
     name: 'Overwatch Stats',
     description: 'Mobile app to search for and view overwatch player profiles built with React Native.',
     src: 'https://via.placeholder.com/200x150',
-    type: 'mobile'
+    type: 'mobile',
+    solo: true
+  },
+  {
+    name: 'Python Starcraft2 AI',
+    description: 'Rule based AI that plays starcraft 2 utilizing the offical Blizzard API.',
+    src: 'https://via.placeholder.com/200x150',
+    type: 'ai/machine learning',
+    solo: true
+  },
+  {
+    name: 'Automouse',
+    description: 'Node CLI for mouse and keyboard automation.',
+    src: 'https://via.placeholder.com/200x150',
+    type: 'cli/tool',
+    solo: true
   }
 ]
 

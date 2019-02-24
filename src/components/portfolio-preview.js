@@ -4,9 +4,9 @@ import './portfolio-preview.css';
 import { PortfolioPreviewSingle } from './portfolio-preview-single';
 
 const PortfolioPreview = ({ projects }) => (
-  <section className="project-preview">
+  <section className="portfolio-preview">
     <h2 className="portfolio-preview-header">PORTFOLIO</h2>
-    <div>{projects && projects.map(project => {
+    <div className="portfolio-preview-projects">{projects && projects.map(project => {
       return (
         <PortfolioPreviewSingle name={project.name} description={project.description} src={project.src} />
       );
