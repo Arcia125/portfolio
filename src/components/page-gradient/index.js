@@ -1,14 +1,17 @@
 import React from 'react';
+import classNames from 'classnames';
 
 import './page-gradient.css';
 
-const PageGradient = ({ color1, color1Stop, color2, color2Stop, color3, color3Stop }) => (
-  <div className="page-gradient-background" style={{
+const PageGradient = ({ style, color1, color1Stop, color2, color2Stop, color3, color3Stop }) => (
+  <div className={classNames('page-gradient-background', )} style={{
     background: `linear-gradient(${color1} ${color1Stop}, ${color2} ${color2Stop}, ${color3} ${color3Stop})`,
+    ...style
   }}/>
 );
 
 PageGradient.defaultProps = {
+  style: {},
   color1: 'rgb(23, 8, 53)',
   color1Stop: '15%',
   color2: 'rgb(99, 45, 208)',

@@ -1,9 +1,18 @@
-import { Link } from "gatsby"
-import PropTypes from "prop-types"
 import React from "react"
+import PropTypes from "prop-types"
+import { Link } from "gatsby"
+import classNames from 'classnames';
 
 import './nav.css';
 import { layout } from "../constants/layout";
+
+const NavLink = ({ className, children, ...restProps }) => (
+  <Link
+    className={classNames('main-site-navigation-link', className)}
+    {...restProps}>
+    {children}
+  </Link>
+);
 
 const Nav = ({ siteTitle }) => (
   <nav
@@ -13,23 +22,23 @@ const Nav = ({ siteTitle }) => (
     }}
   >
     <div
+      className="main-site-navigation-links"
       style={{
-        margin: `0 auto`,
         maxWidth: layout.maxWidth,
-        padding: layout.padding,
+        padding: layout.padding
       }}
     >
-        <Link
+        <NavLink
+          className="site-title"
           to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-            fontWeight: 600,
-            fontSize: '1.618rem'
-          }}
         >
           {siteTitle}
-        </Link>
+        </NavLink>
+        {/* <div className="nav-right-section">
+          <NavLink className="portfolio-link" to="/portfolio">
+            PORTFOLIO
+          </NavLink>
+        </div> */}
     </div>
   </nav>
 )

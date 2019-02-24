@@ -1,5 +1,5 @@
 class Trait {
-  constructor(title, subtext, ImageComponent) {
+  constructor({ title, subtext, ImageComponent }) {
     this.title = title;
     this.subtext = subtext;
     this.ImageComponent = ImageComponent;
