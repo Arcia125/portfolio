@@ -6,7 +6,7 @@ const Header = ({ emphasizedIntroText, introText, subheading }) => (
   <>
     <HeaderPageGradient />
     <header role="banner" style={{
-      marginBottom: '20rem'
+      marginBottom: '30rem'
     }}>
       <h2 style={{ color: '#fff', marginTop: '5rem', fontWeight: 400 }}>
         <span style={{ color: 'gold', fontWeight: 500 }}>{emphasizedIntroText}</span>

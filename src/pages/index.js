@@ -1,4 +1,6 @@
 import React from "react"
+import { graphql } from "gatsby";
+
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -18,31 +20,8 @@ const traits = [
   })
 ];
 
-const projects = [
-  {
-    name: 'Overwatch Stats',
-    description: 'Mobile app to search for and view overwatch player profiles built with React Native.',
-    src: 'https://via.placeholder.com/200x150',
-    type: 'mobile',
-    solo: true
-  },
-  {
-    name: 'Python Starcraft2 AI',
-    description: 'Rule based AI that plays starcraft 2 utilizing the offical Blizzard API.',
-    src: 'https://via.placeholder.com/200x150',
-    type: 'ai/machine learning',
-    solo: true
-  },
-  {
-    name: 'Automouse',
-    description: 'Node CLI for mouse and keyboard automation.',
-    src: 'https://via.placeholder.com/200x150',
-    type: 'cli/tool',
-    solo: true
-  }
-]
 
-const IndexPage = () => (
+const IndexPage = ({ data }) => (
   <>
     <HeaderIllustrations />
     <Layout>
@@ -50,9 +29,42 @@ const IndexPage = () => (
         <Header emphasizedIntroText="Hello, " introText="my name is Kevin Hallett. I am a web developer." subheading="I build web apps alongside amazing people. Contact me now to hire me for your next project." />
         <AboutMeSection />
         <TraitSection traits={traits} />
-        <PortfolioPreview projects={projects} />
+        <PortfolioPreview data={data} />
     </Layout>
   </>
 )
+
+export const projectImageFragment = graphql`
+  fragment projectImage on File {
+    childImageSharp {
+      fluid(maxWidth: 320) {
+        ...GatsbyImageSharpFluid
+      }
+    }
+  }
+`;
+
+export const query = graphql`
+  query {
+    project0: file(relativePath: { eq: "project-ow-stats.png" }) {
+      ...projectImage
+    },
+    project1: file(relativePath: { eq: "project-starcraft2-bot.png" }) {
+      ...projectImage
+    },
+    project2: file(relativePath: { eq: "project-automouse.png" }) {
+      ...projectImage
+    },
+    project3: file(relativePath: { eq: "project-retro-paddle-ball.png" }) {
+      ...projectImage
+    },
+    project4: file(relativePath: { eq: "project-fire-animation.png" }) {
+      ...projectImage
+    },
+    project5: file(relativePath: { eq: "project-roguelike.png" }) {
+      ...projectImage
+    }
+  }
+`
 
 export default IndexPage
