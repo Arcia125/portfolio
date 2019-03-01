@@ -1,0 +1,7 @@
+{
+  "name": "React Roguelike Game",
+  "description": "A game with procedurally generated levels and a progression/loot system.",
+  "type": "game",
+  "solo": true,
+  "imageName": "roguelike"
+}

@@ -46,23 +46,37 @@ export const projectImageFragment = graphql`
 
 export const query = graphql`
   query {
-    project0: file(relativePath: { eq: "project-ow-stats.png" }) {
+    owStats: file(relativePath: { eq: "project-ow-stats.png" }) {
       ...projectImage
     },
-    project1: file(relativePath: { eq: "project-starcraft2-bot.png" }) {
+    starcraft2Bot: file(relativePath: { eq: "project-starcraft2-bot.png" }) {
       ...projectImage
     },
-    project2: file(relativePath: { eq: "project-automouse.png" }) {
+    automouse: file(relativePath: { eq: "project-automouse.png" }) {
       ...projectImage
     },
-    project3: file(relativePath: { eq: "project-retro-paddle-ball.png" }) {
+    retroPaddleBall: file(relativePath: { eq: "project-retro-paddle-ball.png" }) {
       ...projectImage
     },
-    project4: file(relativePath: { eq: "project-fire-animation.png" }) {
+    fireAnimation: file(relativePath: { eq: "project-fire-animation.png" }) {
       ...projectImage
     },
-    project5: file(relativePath: { eq: "project-roguelike.png" }) {
+    roguelike: file(relativePath: { eq: "project-roguelike.png" }) {
       ...projectImage
+    },
+    projects: allFile(filter: { sourceInstanceName: { eq: "projects" } }) {
+      edges {
+        node {
+          childProjectsJson {
+            id
+            type
+            name
+            imageName
+            description
+            solo
+          }
+        }
+      }
     }
   }
 `

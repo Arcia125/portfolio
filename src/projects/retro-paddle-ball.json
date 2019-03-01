@@ -1,0 +1,7 @@
+{
+  "name": "Retro Paddle Ball",
+  "description": "Pong clone built with Godot.",
+  "type": "game",
+  "solo": true,
+  "imageName": "retroPaddleBall"
+}

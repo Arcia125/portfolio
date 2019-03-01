@@ -1,0 +1,7 @@
+{
+  "name": "Pixel Fire Animation",
+  "description": "Fire animation made with Java.",
+  "type": "animation",
+  "solo": true,
+  "imageName": "fireAnimation"
+}

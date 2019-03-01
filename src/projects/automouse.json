@@ -1,0 +1,7 @@
+{
+  "name": "Automouse",
+  "description": "Node CLI for mouse and keyboard automation.",
+  "type": "cli/tool",
+  "solo": true,
+  "imageName": "automouse"
+}

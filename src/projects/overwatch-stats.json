@@ -1,0 +1,7 @@
+{
+  "name": "Overwatch Stats",
+  "description": "Mobile app to search for and view overwatch player profiles built with React Native.",
+  "type": "mobile",
+  "solo": true,
+  "imageName": "owStats"
+}
