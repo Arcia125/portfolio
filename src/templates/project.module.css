@@ -1,0 +1,40 @@
+.project {
+
+}
+
+.project-image {
+  max-width: 100%;
+}
+
+.button {
+  background: #fff;
+  border: none;
+  display: flex;
+  align-items: center;
+  padding: .8rem;
+  border-radius: 6px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  font-size: 1.4rem;
+  color: #fff;
+  letter-spacing: .05rem;
+  text-decoration: none;
+  display: inline-flex;
+}
+
+.button:hover {
+  background: #262626;
+}
+
+.github {
+  background: rgb(99, 45, 208);
+}
+
+.github-logo {
+  margin-left: .7rem;
+}
+
+.top-links {
+  margin-top: 1.4rem;
+  margin-bottom: 1.4rem;
+}

@@ -2,6 +2,10 @@
   padding: 1.6rem 0 0 0;
 }
 
+.main-site-navigation.solid {
+  background: linear-gradient(to right, rgb(99, 45, 208) 25%, rgb(80, 3, 235) 100%);
+}
+
 .main-site-navigation-links {
   margin: 0 auto;
   display: flex;

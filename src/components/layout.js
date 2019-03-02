@@ -6,7 +6,7 @@ import Nav from "./nav"
 import "./layout.css"
 import { layout } from "../constants/layout";
 
-const Layout = ({ children }) => (
+const Layout = ({ children, solidNav }) => (
   <StaticQuery
     query={graphql`
       query SiteTitleQuery {
@@ -19,7 +19,7 @@ const Layout = ({ children }) => (
     `}
     render={data => (
       <div class="layout-container">
-        <Nav siteTitle={data.site.siteMetadata.title} />
+        <Nav solid={solidNav} siteTitle={data.site.siteMetadata.title} />
         <div
           style={{
             margin: `0 auto`,

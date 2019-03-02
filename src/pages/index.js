@@ -74,6 +74,7 @@ export const query = graphql`
             imageName
             description
             solo
+            pagePath
           }
         }
       }

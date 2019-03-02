@@ -3,5 +3,8 @@
   "description": "Node CLI for mouse and keyboard automation.",
   "type": "cli/tool",
   "solo": true,
-  "imageName": "automouse"
+  "imageName": "automouse",
+  "pagePath": "projects/automouse",
+  "relativeImagePath": "project-automouse.png",
+  "repo": "https://github.com/Arcia125/automouse"
 }

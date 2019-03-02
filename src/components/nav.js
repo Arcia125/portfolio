@@ -14,11 +14,11 @@ const NavLink = ({ className, children, ...restProps }) => (
   </Link>
 );
 
-const Nav = ({ siteTitle }) => (
+const Nav = ({ siteTitle, solid }) => (
   <nav
-    className="main-site-navigation"
+    className={classNames({ "main-site-navigation": true, solid })}
     style={{
-      marginBottom: `1.45rem`,
+      marginBottom: `1.45rem`
     }}
   >
     <div

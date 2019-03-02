@@ -12,7 +12,7 @@ const PortfolioPreview = ({ data }) => (
       const project = edge.node.childProjectsJson;
       const imageName = project.imageName;
       return (
-        <PortfolioPreviewSingle name={project.name} description={project.description} image={<Img fluid={data[imageName].childImageSharp.fluid} />} />
+        <PortfolioPreviewSingle name={project.name} description={project.description} image={<Img fluid={data[imageName].childImageSharp.fluid} />} link={project.pagePath} />
       );
     })}</div>
   </section>

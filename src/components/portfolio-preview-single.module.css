@@ -7,6 +7,12 @@
   /* box-shadow: 0px 0px 6px 2px #eeea, -4px 4px 10px #aaaa; */
   /* border-radius: 6px; */
   overflow: hidden;
+  text-decoration: none;
+  color: #262626;
+}
+
+.portfolio-preview-single:hover {
+  box-shadow: 5px 5px 10px 5px #acacaf;
 }
 
 .portfolio-preview-single {
