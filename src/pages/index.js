@@ -11,6 +11,7 @@ import { TraitSection } from "../components/trait-section";
 import { CleanCodeIllustration } from "../components/clean-code-illustration";
 import { Trait } from "../models/trait";
 import { PortfolioPreview } from "../components/portfolio-preview";
+import { ContactForm } from "../components/contact-form";
 
 const traits = [
   new Trait({
@@ -30,6 +31,7 @@ const IndexPage = ({ data }) => (
         <AboutMeSection />
         <TraitSection traits={traits} />
         <PortfolioPreview data={data} />
+        <ContactForm method="post" name="contact" honeypot="bot-field" />
     </Layout>
   </>
 )

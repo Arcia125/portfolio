@@ -1,0 +1,76 @@
+.container {
+  padding: 1.5rem 0 1rem 0;
+  color: #262626;
+  box-shadow: 0 2px 5px 4px #26262626;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 15px;
+  margin-top: 5rem;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  transition: 300ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.container:hover, .container:focus-within {
+  transform: translateY(-5px);
+  box-shadow: 0 7px 12px 7px #26262626;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.field label {
+  text-transform: uppercase;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  margin-bottom: .5rem;
+  font-size: 1.1rem;
+}
+
+.field input, .field textarea {
+  border: 2px solid #26262626;
+  border-radius: 5px;
+  padding: .3rem;
+  font-family: 'Roboto', sans-serif;
+  margin-bottom: 1.5rem;
+  outline: none;
+}
+
+.field input:focus, .field input:hover, .field textarea:hover, .field textarea:focus {
+  box-shadow: 0 2px 8px 3px #26262626;
+  transition: 300ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transform: translateY(-5px);
+}
+
+.button {
+  background: #fff;
+  border: none;
+  display: flex;
+  align-items: center;
+  padding: .7rem 1.5rem;
+  border-radius: 6px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  font-size: 1.1rem;
+  color: #fff;
+  letter-spacing: .05rem;
+  text-decoration: none;
+  display: inline-flex;
+  background: rgb(99, 45, 208);
+  margin-left: auto;
+}
+
+.button:hover {
+  background: #262626;
+}
