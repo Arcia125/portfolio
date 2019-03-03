@@ -62,6 +62,9 @@ const ContactForm = ({
             })
           }}
         >
+          <p class={styles.hidden}>
+            <label>Don’t fill this out if you're human: <input name={honeypot} /></label>
+          </p>
           <input name="form-name" type="hidden" value="contact" />
           <Field name="name" placeholder="Your Name" type="text" value={nameVal} onChange={createChangeHandler(setNameVal)}/>
           <Field name="email" placeholder="example@email.com" type="email" required value={emailVal} onChange={createChangeHandler(setEmailVal)} />
