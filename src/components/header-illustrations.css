@@ -3,8 +3,9 @@
   flex-direction: column;
   position: absolute;
   right: 4rem;
-  top: 10rem;
-  width: 900px;
+  top: 11rem;
+  width: 40vw;
+  max-width: 700px;
   transform: perspective(2005px) rotateY(7deg) rotateX(19deg) rotateZ(-18deg) skewX(1deg) skewY(1deg);
 }
 
@@ -36,7 +37,6 @@
   .page-illustration-container {
     left: 5rem;
     top: 27rem;
-    width: 200px;
   }
   .page-illustration {
   }

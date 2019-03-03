@@ -8,3 +8,9 @@
   overflow: hidden;
   z-index: -1;
 }
+
+/* @media only screen and (max-width: 1350px) {
+  .page-gradient {
+    width: 100%;
+  }
+} */

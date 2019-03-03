@@ -627,6 +627,11 @@ pre tt:after {
   }
 }
 
+.layout-container {
+  width: 100vw;
+  overflow-x: hidden;
+}
+
 .layout-container footer {
   margin-top: 20rem;
 }
