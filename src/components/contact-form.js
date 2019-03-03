@@ -32,6 +32,7 @@ const ContactForm = ({
   method,
   honeypot
 }) => {
+  const [honeypotVal, setHoneypotVal] = useState("");
   const [nameVal, setNameVal] = useState("");
   const [emailVal, setEmailVal] = useState("");
   const [messageVal, setMessageVal] = useState("");
@@ -53,9 +54,11 @@ const ContactForm = ({
               method: "POST",
               headers: { "Content-Type": "application/x-www-form-urlencoded" },
               body: encode({
+                "form-name": name,
                 name: nameVal,
                 email: emailVal,
-                message: messageVal
+                message: messageVal,
+                [honeypot]: honeypotVal
               })
             }).then(() => {
               setSuccess(true);
@@ -63,9 +66,8 @@ const ContactForm = ({
           }}
         >
           <p class={styles.hidden}>
-            <label>Don’t fill this out if you're human: <input name={honeypot} /></label>
+            <label>Don’t fill this out if you're human: <input name={honeypot} value={honeypotVal} onChange={createChangeHandler(setHoneypotVal)} /></label>
           </p>
-          <input name="form-name" type="hidden" value="contact" />
           <Field name="name" placeholder="Your Name" type="text" value={nameVal} onChange={createChangeHandler(setNameVal)}/>
           <Field name="email" placeholder="example@email.com" type="email" required value={emailVal} onChange={createChangeHandler(setEmailVal)} />
           <Field name="message" placeholder="Message" type="textarea" value={messageVal} onChange={createChangeHandler(setMessageVal)} />
