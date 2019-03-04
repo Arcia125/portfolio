@@ -1,7 +1,7 @@
 .container {
   padding: 1.5rem 0 1rem 0;
   color: #262626;
-  box-shadow: 0 2px 5px 4px #26262626;
+  box-shadow: var(--lightmode-box-shadow);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -15,7 +15,7 @@
 
 .container:hover, .container:focus-within {
   transform: translateY(-5px);
-  box-shadow: 0 7px 12px 7px #26262626;
+  box-shadow: var(--lightmode-box-shadow-raised);
 }
 
 .form {
@@ -48,7 +48,7 @@
 }
 
 .field input:focus, .field input:hover, .field textarea:hover, .field textarea:focus {
-  box-shadow: 0 2px 8px 3px #26262626;
+  box-shadow: var(--lightmode-box-shadow);
   transition: 300ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
   transform: translateY(-5px);
 }
