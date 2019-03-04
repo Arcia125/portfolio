@@ -1,3 +1,15 @@
+@keyframes pulse {
+  0% {
+    transforM: matrix(1.2, 0, 0, 1.2, 0, -30);
+  }
+  50% {
+    transform: matrix(1.2, 0, 0, 1.2, 0, -25);
+  }
+  100% {
+    transform: matrix(1.2, 0, 0, 1.2, 0, -30);
+  }
+}
+
 @keyframes grow-in {
   0% {
     transform: matrix(1, 0, 0, 1, 0, 0);
@@ -52,7 +64,7 @@
   box-shadow: var(--lightmode-box-shadow-raised);
   filter: saturate(1.2);
   z-index: 50;
-  animation: grow-in 400ms ease-out alternate both;
+  animation: grow-in 400ms ease-out alternate both, pulse 3000ms ease-in-out infinite 450ms;
 }
 
 .portfolio-preview-single {
