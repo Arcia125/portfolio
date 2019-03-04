@@ -4,11 +4,11 @@
   }
   
   25% {
-    transform: matrix(.85, 0, 0, 1, 0, 20);
+    transform: matrix(.95, 0, 0, 1, 0, 10);
   }
 
-  50% {
-    transform: matrix(1.35, 0, 0, 1.25, 0, -35);
+  60% {
+    transform: matrix(1.30, 0, 0, 1.25, 0, -35);
   }
 
   /* 65% {
@@ -24,6 +24,10 @@
 @keyframes grow-out {
   0% {
     transform: matrix(1.2, 0, 0, 1.2, 0, -30);
+  }
+
+  25% {
+    transform: matrix(.85, 0, 0, 1, 0, 20);
   }
 
   100% {
@@ -48,7 +52,7 @@
   box-shadow: var(--lightmode-box-shadow-raised);
   filter: saturate(1.2);
   z-index: 50;
-  animation: grow-in 550ms ease-out alternate both;
+  animation: grow-in 400ms ease-out alternate both;
 }
 
 .portfolio-preview-single {
@@ -60,14 +64,12 @@
   overflow: hidden;
   text-decoration: none;
   color: #262626;
-  transition: 350ms;
   background: #fff;
   border-radius: 4px;
   z-index: 10;
   animation: grow-out 350ms ease-in alternate both;
   height: 100%;
 }
-
 
 .portfolio-preview-single-image-container {
   width: 100%;
