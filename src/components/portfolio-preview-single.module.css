@@ -10,7 +10,7 @@
   }
 }
 
-@keyframes grow-in {
+@keyframes grow {
   0% {
     transform: matrix(1, 0, 0, 1, 0, 0);
   }
@@ -33,7 +33,7 @@
   }
 }
 
-@keyframes grow-out {
+@keyframes shrink {
   0% {
     transform: matrix(1.2, 0, 0, 1.2, 0, -30);
   }
@@ -64,7 +64,7 @@
   box-shadow: var(--lightmode-box-shadow-raised);
   filter: saturate(1.2);
   z-index: 50;
-  animation: grow-in 400ms ease-out alternate both, pulse 3000ms ease-in-out infinite 450ms;
+  animation: grow 400ms cubic-bezier(.47,.19,1,.18) alternate both, pulse 3000ms ease-in-out infinite 450ms;
 }
 
 .portfolio-preview-single {
@@ -79,7 +79,7 @@
   background: #fff;
   border-radius: 4px;
   z-index: 10;
-  animation: grow-out 350ms ease-in alternate both;
+  animation: shrink 350ms ease-in alternate both;
   height: 100%;
 }
 

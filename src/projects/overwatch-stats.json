@@ -7,5 +7,6 @@
   "pagePath": "projects/overwatch-stats",
   "relativeImagePath": "project-ow-stats.png",
   "repo": "https://github.com/Arcia125/overstats",
-  "markdownPath": "project-pages/overwatch-stats.md"
+  "markdownPath": "project-pages/overwatch-stats.md",
+  "homePage": true
 }

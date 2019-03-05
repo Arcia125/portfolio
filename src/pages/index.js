@@ -66,6 +66,9 @@ export const query = graphql`
     roguelike: file(relativePath: { eq: "project-roguelike.png" }) {
       ...projectImage
     },
+    invester: file(relativePath: { eq: "project-invester.png" }) {
+      ...projectImage
+    },
     projects: allFile(filter: { sourceInstanceName: { eq: "projects" } }) {
       edges {
         node {
@@ -77,6 +80,7 @@ export const query = graphql`
             description
             solo
             pagePath
+            homePage
           }
         }
       }

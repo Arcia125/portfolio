@@ -8,7 +8,7 @@ const PortfolioPreview = ({ data }) => (
   <section className={styles.portfolioPreview}>
     <h2 className={styles.portfolioPreviewHeader}>PORTFOLIO</h2>
     <div className={styles.portfolioPreviewProjects}>
-    {data && data.projects.edges.map(edge => {
+    {data && data.projects.edges.filter(edge => edge.node.childProjectsJson.homePage).map(edge => {
       const project = edge.node.childProjectsJson;
       const imageName = project.imageName;
       return (
