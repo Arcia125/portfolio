@@ -1,6 +1,6 @@
 {
   "name": "Python Starcraft2 AI",
-  "description": "Rule based AI that plays starcraft 2 utilizing the offical Blizzard API.",
+  "description": "Rule based AI that plays starcraft 2 utilizing the official Blizzard API.",
   "type": "ai/machine learning",
   "solo": true,
   "imageName": "starcraft2Bot",
