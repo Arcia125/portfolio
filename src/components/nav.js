@@ -34,11 +34,14 @@ const Nav = ({ siteTitle, solid }) => (
         >
           {siteTitle}
         </NavLink>
-        {/* <div className="nav-right-section">
-          <NavLink className="portfolio-link" to="/portfolio">
-            PORTFOLIO
+        <div className="nav-right-section">
+          <NavLink className="blog-link" to="/blog">
+          BLOG
           </NavLink>
-        </div> */}
+          {/* <NavLink className="portfolio-link" to="/portfolio">
+            PORTFOLIO
+          </NavLink> */}
+        </div>
     </div>
   </nav>
 )
