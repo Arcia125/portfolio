@@ -1,0 +1,78 @@
+---
+title: JavaScript Iterables
+date: 2019-10-23
+---
+
+## What are iterables?
+With the addition of ES2015 JavaScript received two new <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols">protocols</a>. Some built-in JavaScript types have default iterable behavior defined like `Array` or `Map` which allows them to be used in `for..of` loops. The new <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols#The_iterable_protocol">iterable</a> and <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols#The_iterator_protocol">iterator</a> protocols allows you to define iterable behavior for any object. 
+
+## Concepts
+* Iterable - any object that defines a `Symbol.iterator` method that returns an iterator.
+* Iterator - any object containing a `next` method.
+
+## Using iterables
+Say that you had an object that contained some users each keyed by their user id.
+```js
+const users = {
+  1438: {
+    name: 'Steve'
+  },
+  1693: {
+    name: 'John'
+  },
+  2356: {
+    name: 'Sally'
+  }
+};
+```
+
+If you try to use a `for..of` loop with `users` you will get `TypeError: users is not iterable`. Well then, how do we make `users` iterable?
+```js
+const users = {
+  1438: {
+    name: 'Steve'
+  },
+  1693: {
+    name: 'John'
+  },
+  2356: {
+    name: 'Sally'
+  },
+  // iterator definition that makes users an iterable
+  [Symbol.iterator]: function() {
+    let i = 0;
+    const userIds = Object.keys(users);
+    return {
+      next: () => {
+        if (i > userIds.length - 1) {
+          return { done: true };
+        }
+
+        const userId = userIds[i];
+        const user  = this[userId];
+        i++;
+
+        return {
+          value: user
+        }
+      }
+    }
+  }
+};
+```
+Now when you try to use a `for..of` loop on `users`, you are now able to loop over all of the users.
+```js
+for (const user of users) {
+  console.log(user.name); 
+  /**
+   * outputs:
+   * Steve
+   * John
+   * Sally
+   */
+}
+```
+Users can now also be spread into an array
+```js
+[...users] // [{"name":"Steve"},{"name":"John"},{"name":"sally"}]
+```
