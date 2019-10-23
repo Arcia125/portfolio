@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Styled, css } from "theme-ui";
 
 import styles from './contact-form.module.css';
 
@@ -11,7 +12,9 @@ const Field = ({
   const isTextArea = type === 'textarea';
   return (
     <div className={styles.field}>
-      <label htmlFor={name}>{name}</label>
+      <label css={css({
+        color: 'text'
+      })} htmlFor={name}>{name}</label>
       {isTextArea ? <textarea name={name} placeholder={placeholder} rows={5} {...restProps} /> : <input name={name} placeholder={placeholder} type={type} {...restProps} />}
     </div>
   );
@@ -38,10 +41,16 @@ const ContactForm = ({
   const [messageVal, setMessageVal] = useState("");
   const [success, setSuccess] = useState(false);
   return (
-    <div className={styles.container}>
-      {success ? (<h2>THANK YOU 😊</h2>) : (
+    <Styled.div css={css({
+      bg: 'raised'
+    })} className={styles.container}>
+      {success ? (<Styled.h2 css={css({
+        color: 'text'
+      })}>THANK YOU 😊</Styled.h2>) : (
         <>
-        <h2>CONTACT ME</h2>
+          <Styled.h2 css={css({
+            color: 'text'
+          })}>CONTACT ME</Styled.h2>
         <form
           className={styles.form}
           name={name}
@@ -75,7 +84,7 @@ const ContactForm = ({
         </form>
       </>
       )}
-    </div>
+    </Styled.div>
   );
 }
 

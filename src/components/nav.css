@@ -9,6 +9,7 @@
 .main-site-navigation-links {
   margin: 0 auto;
   display: flex;
+  justify-content: space-between;
 }
 
 .main-site-navigation-link {
@@ -22,6 +23,6 @@
   font-size: 1.618rem;
 }
 
-.main-site-navigation-link.portfolio-link {
-  margin-left: 5rem;
+.nav-right-section {
+  padding-left: 5rem;
 }
