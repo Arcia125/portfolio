@@ -4,7 +4,7 @@
   left: 0;
   width: 100%;
   position: absolute;
-  transform: skewY(-15deg);
+  transform: skewY(-12deg);
   overflow: hidden;
   z-index: -1;
 }
