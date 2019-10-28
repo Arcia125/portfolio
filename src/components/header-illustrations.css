@@ -6,7 +6,8 @@
   top: 11rem;
   width: 40vw;
   max-width: 700px;
-  transform: perspective(2005px) rotateY(7deg) rotateX(19deg) rotateZ(-18deg) skewX(1deg) skewY(1deg);
+  transform: perspective(2005px) rotateY(7deg) rotateX(19deg) rotateZ(-18deg)
+    skewX(1deg) skewY(1deg);
 }
 
 .page-illustration {

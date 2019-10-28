@@ -1,6 +1,6 @@
 ---
-path: "projects/retro-paddle-ball"
-name: "retro-paddle-ball"
+path: 'projects/retro-paddle-ball'
+name: 'retro-paddle-ball'
 ---
 
 ## ABOUT

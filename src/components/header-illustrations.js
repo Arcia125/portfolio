@@ -7,8 +7,12 @@ import { MobileIllustration } from './mobile-illustration';
 
 const HeaderIllustrations = () => (
   <div className="page-illustration-container">
-    <DesktopIllustration className={classNames('page-illustration', 'desktop-illustration')} />
-    <MobileIllustration className={classNames('page-illustration', 'mobile-illustration')} />
+    <DesktopIllustration
+      className={classNames('page-illustration', 'desktop-illustration')}
+    />
+    <MobileIllustration
+      className={classNames('page-illustration', 'mobile-illustration')}
+    />
   </div>
 );
 

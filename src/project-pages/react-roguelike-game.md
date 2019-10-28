@@ -1,6 +1,6 @@
 ---
-path: "projects/roguelike"
-name: "roguelike"
+path: 'projects/roguelike'
+name: 'roguelike'
 ---
 
 ## ABOUT

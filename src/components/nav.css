@@ -3,26 +3,42 @@
 }
 
 .main-site-navigation.solid {
-  background: linear-gradient(to right, rgb(99, 45, 208) 25%, rgb(80, 3, 235) 100%);
+  background: linear-gradient(
+    to right,
+    rgb(99, 45, 208) 25%,
+    rgb(80, 3, 235) 100%
+  );
 }
 
 .main-site-navigation-links {
-  margin: 0 auto;
+  box-sizing: border-box;
+  margin: auto;
   display: flex;
   justify-content: space-between;
 }
 
 .main-site-navigation-link {
-  color: #fff;
+  color: #ccd;
   text-decoration: none;
   font-weight: 600;
   font-family: 'Roboto', sans-serif;
+  transition: 300ms;
+}
+
+.main-site-navigation-link.active,
+.main-site-navigation-link:hover {
+  color: #fff;
+}
+
+.main-site-navigation-link:hover {
+  text-shadow: 1px 1px 1px #cccccc99;
+}
+
+.main-site-navigation-link:not(.site-title) {
+  margin-left: 1rem;
 }
 
 .main-site-navigation-link.site-title {
   font-size: 1.618rem;
-}
-
-.nav-right-section {
-  padding-left: 5rem;
+  color: #fff;
 }

@@ -29,6 +29,9 @@
   .trait-display {
     text-align: center;
   }
+  .trait-display p {
+    margin: auto;
+  }
   .trait-display-image {
     margin: 0 0 2rem 0;
   }
