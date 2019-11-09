@@ -1,5 +1,6 @@
 const purple60 = `#663399`;
 const purple30 = `#D9BAE8`;
+const grey30 = '#464252';
 const grey90 = `#232129`;
 const grey60 = `#434149`;
 const black80 = `#1B1F23`;
@@ -12,6 +13,7 @@ const lightGray = `hsla(0, 0%, 0%, 0.2)`;
 export default {
   text: grey90,
   background: white,
+  backgroundAccent: '#ded5f1',
   raised: white,
   primary: purple60,
   secondary: black80,
@@ -37,6 +39,7 @@ export default {
     dark: {
       text: lightWhite,
       background: grey90,
+      backgroundAccent: grey30,
       raised: grey60,
       primary: purple30,
       secondary: lightWhite,

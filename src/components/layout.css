@@ -1,14 +1,15 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto');
-@import url('https://fonts.googleapis.com/css?family=Lato');
 
 html {
   font-family: 'Roboto', sans-serif;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
   overflow-x: hidden;
+  max-width: 100%;
 }
 
 body {
+  max-width: 100%;
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -288,7 +289,7 @@ h1 {
     Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   font-weight: bold;
   text-rendering: optimizeLegibility;
-  font-size: 3.25rem;
+  font-size: 40px;
   line-height: 1.1;
 }
 
@@ -296,7 +297,7 @@ h2 {
   margin-left: 0;
   margin-right: 0;
   margin-top: 0;
-  \padding-bottom: 0;
+  padding-bottom: 0;
   padding-left: 0;
   padding-right: 0;
   padding-top: 0;
@@ -306,7 +307,7 @@ h2 {
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   font-weight: bold;
   text-rendering: optimizeLegibility;
-  font-size: 2.48rem;
+  font-size: 40px;
   line-height: 1.1;
 }
 
@@ -724,11 +725,24 @@ pre tt:after {
   }
 }
 
-.layout-container {
+.site-container {
   width: 100vw;
   overflow-x: hidden;
 }
 
-.layout-container footer {
+.site-container footer {
   margin-top: 20rem;
+}
+
+@media screen and (max-width: 800px) {
+  h1 {
+    font-size: 40px;
+  }
+  h2 {
+    font-size: 32px;
+  }
+
+  .site-container {
+    padding: 0 24px;
+  }
 }

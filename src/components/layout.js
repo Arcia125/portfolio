@@ -4,7 +4,6 @@ import { StaticQuery, graphql } from 'gatsby';
 
 import Nav from './nav';
 import './layout.css';
-import { layout } from '../constants/layout';
 
 const GET_META_TITLE = graphql`
   query SiteTitleQuery {
@@ -20,16 +19,9 @@ const Layout = ({ children, solidNav }) => (
   <StaticQuery
     query={GET_META_TITLE}
     render={data => (
-      <div class="layout-container">
+      <div className="site-container">
         <Nav solid={solidNav} siteTitle={data.site.siteMetadata.title} />
-        <div
-          style={{
-            margin: `0 auto`,
-            maxWidth: layout.maxWidth,
-            padding: layout.padding,
-            paddingTop: 0,
-          }}
-        >
+        <div>
           <main>{children}</main>
           <footer>
             © {new Date().getFullYear()}, Built with

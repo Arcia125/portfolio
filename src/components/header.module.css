@@ -1,0 +1,31 @@
+.header {
+  padding-top: 180px;
+}
+
+.main-text {
+  color: #fff;
+  font-weight: 600;
+}
+
+.main-text > span {
+  color: #fdc500;
+}
+
+.secondary-text {
+  color: #fff;
+  font-weight: 100;
+  line-height: 32px;
+  max-width: 530px;
+  margin-bottom: 0;
+  font-family: 'Roboto', sans-serif;
+  font-size: 24px;
+}
+
+@media screen and (max-width: 800px) {
+  .header {
+    padding-top: 30px;
+  }
+  .secondary-text {
+    font-size: 20px;
+  }
+}

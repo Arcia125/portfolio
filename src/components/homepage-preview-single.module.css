@@ -79,8 +79,6 @@
   align-items: center;
   overflow: hidden;
   text-decoration: none;
-  color: #262626;
-  background: #fff;
   border-radius: 4px;
   z-index: 10;
   animation: shrink 350ms ease-in backwards;

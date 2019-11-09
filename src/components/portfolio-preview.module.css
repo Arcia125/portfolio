@@ -1,4 +1,15 @@
 .portfolio-preview {
+  padding-top: 110px;
+}
+
+.portfolio-preview::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  height: 120%;
+  transform: skewY(-12deg) translateY(-110px);
 }
 
 .portfolio-preview-projects {
@@ -8,9 +19,13 @@
 
 .portfolio-preview-header {
   margin-bottom: 3rem;
+  text-align: center;
 }
 
 @media only screen and (max-width: 800px) {
+  .portfolio-preview::before {
+    height: 500%;
+  }
   .portfolio-preview-projects {
     flex-direction: column;
     align-items: center;
