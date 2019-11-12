@@ -13,7 +13,7 @@ const lightGray = `hsla(0, 0%, 0%, 0.2)`;
 export default {
   text: grey90,
   background: white,
-  backgroundAccent: '#ded5f1',
+  backgroundAccent: '#F6F9FC',
   raised: white,
   primary: purple60,
   secondary: black80,
