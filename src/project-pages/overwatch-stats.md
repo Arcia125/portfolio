@@ -1,6 +1,6 @@
 ---
-path: "projects/overwatch-stats"
-name: "overwatch-stats"
+path: 'projects/overwatch-stats'
+name: 'overwatch-stats'
 ---
 
 ## ABOUT

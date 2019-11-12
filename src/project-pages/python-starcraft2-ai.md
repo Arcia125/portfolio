@@ -1,6 +1,6 @@
 ---
-path: "projects/starcraft-2-ai"
-name: "starcraft-2-ai"
+path: 'projects/starcraft-2-ai'
+name: 'starcraft-2-ai'
 ---
 
 ## ABOUT

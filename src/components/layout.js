@@ -1,33 +1,27 @@
-import React from "react"
-import PropTypes from "prop-types"
-import { StaticQuery, graphql } from "gatsby"
+import React from 'react';
+import PropTypes from 'prop-types';
+import { StaticQuery, graphql } from 'gatsby';
 
-import Nav from "./nav"
-import "./layout.css"
-import { layout } from "../constants/layout";
+import Nav from './nav';
+import './layout.css';
+
+const GET_META_TITLE = graphql`
+  query SiteTitleQuery {
+    site {
+      siteMetadata {
+        title
+      }
+    }
+  }
+`;
 
 const Layout = ({ children, solidNav }) => (
   <StaticQuery
-    query={graphql`
-      query SiteTitleQuery {
-        site {
-          siteMetadata {
-            title
-          }
-        }
-      }
-    `}
+    query={GET_META_TITLE}
     render={data => (
-      <div class="layout-container">
+      <div className="site-container">
         <Nav solid={solidNav} siteTitle={data.site.siteMetadata.title} />
-        <div
-          style={{
-            margin: `0 auto`,
-            maxWidth: layout.maxWidth,
-            padding: layout.padding,
-            paddingTop: 0,
-          }}
-        >
+        <div>
           <main>{children}</main>
           <footer>
             © {new Date().getFullYear()}, Built with
@@ -38,10 +32,10 @@ const Layout = ({ children, solidNav }) => (
       </div>
     )}
   />
-)
+);
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
-}
+};
 
-export default Layout
+export default Layout;
