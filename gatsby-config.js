@@ -20,8 +20,8 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `projects`,
-        path: `${__dirname}/src/projects`
-      }
+        path: `${__dirname}/src/projects`,
+      },
     },
     {
       resolve: `gatsby-plugin-manifest`,
@@ -39,7 +39,7 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/src/project-pages`,
-        name: "markdown-pages",
+        name: 'markdown-pages',
       },
     },
     `gatsby-transformer-remark`,
@@ -49,8 +49,15 @@ module.exports = {
         basePath: `/blog`,
       },
     },
+    {
+      resolve: `gatsby-plugin-hotjar`,
+      options: {
+        id: process.env.HOTJAR_ID,
+        sv: process.env.HOTJAR_SNIPPET_VERSION,
+      },
+    },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.app/offline
     // 'gatsby-plugin-offline',
   ],
-}
+};
