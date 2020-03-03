@@ -1,6 +1,6 @@
-import React from "react";
-import { StaticQuery, graphql } from "gatsby";
-import Img from "gatsby-image";
+import React from 'react';
+import { StaticQuery, graphql } from 'gatsby';
+import Img from 'gatsby-image';
 
 /*
  * This component is built using `gatsby-image` to automatically serve optimized
@@ -30,7 +30,7 @@ const DesktopIllustration = ({ className }) => (
     `}
     render={data => (
       <Img
-        critical
+        loading="eager"
         fadeIn={false}
         className={className}
         fluid={data.placeholderImage.childImageSharp.fluid}

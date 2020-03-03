@@ -21,7 +21,7 @@ const MobileIllustration = ({ className }) => (
     query={GET_IMAGE}
     render={data => (
       <Img
-        critical
+        loading="eager"
         fadeIn={false}
         className={className}
         fluid={data.placeholderImage.childImageSharp.fluid}
