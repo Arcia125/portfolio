@@ -1,10 +1,10 @@
-import React from "react"
-import PropTypes from "prop-types"
-import { Link } from "gatsby"
+import React from 'react';
+import PropTypes from 'prop-types';
+import { Link } from 'gatsby';
 import classNames from 'classnames';
 
 import './nav.css';
-import { layout } from "../constants/layout";
+import { layout } from '../constants/layout';
 
 const NavLink = ({ className, children, ...restProps }) => (
   <Link
@@ -37,7 +37,7 @@ const Nav = ({ siteTitle, solid }) => (
         <NavLink
           className="blog-link"
           to="/blog"
-          activeStyles={{ color: '#fff' }}
+          activeStyle={{ color: '#fff' }}
         >
           BLOG
         </NavLink>
@@ -51,10 +51,10 @@ const Nav = ({ siteTitle, solid }) => (
 
 Nav.propTypes = {
   siteTitle: PropTypes.string,
-}
+};
 
 Nav.defaultProps = {
   siteTitle: ``,
-}
+};
 
-export default Nav
+export default Nav;
