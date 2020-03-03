@@ -30,7 +30,7 @@ const PortfolioPreview = ({ data, title }) => (
                   name={project.name}
                   description={project.description}
                   image={<Img fluid={data[imageName].childImageSharp.fluid} />}
-                  link={project.pagePath}
+                  link={`/${project.pagePath}`}
                 />
               );
             })}
