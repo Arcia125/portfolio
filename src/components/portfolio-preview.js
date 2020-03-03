@@ -26,6 +26,7 @@ const PortfolioPreview = ({ data, title }) => (
               const imageName = project.imageName;
               return (
                 <HomepagePreviewSingle
+                  key={project.name}
                   name={project.name}
                   description={project.description}
                   image={<Img fluid={data[imageName].childImageSharp.fluid} />}
