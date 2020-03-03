@@ -7,7 +7,6 @@ import Layout from '../components/layout';
 import styles from './project.module.css';
 
 export default ({ data, pageContext }) => {
-  console.log(data);
   return (
     <Layout solidNav>
       <div className={styles.project}>
