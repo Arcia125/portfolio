@@ -115,7 +115,7 @@ const ContactForm = ({ name, method, honeypot }) => {
                 });
               }}
             >
-              <p class={styles.hidden}>
+              <p className={styles.hidden}>
                 <label>
                   Don’t fill this out if you're human:{' '}
                   <input
