@@ -86,7 +86,7 @@ const ContactForm = ({ name, method, honeypot }) => {
               color: 'text',
             })}
           >
-            THANK YOU 😊
+            THANK YOU <span role="img" aria-label="smiling emoji">😊</span>
           </Styled.h2>
         ) : (
           <>
@@ -95,7 +95,7 @@ const ContactForm = ({ name, method, honeypot }) => {
                 color: 'text',
                 fontFamily: "'Roboto', sans-serif",
                 fontSize: '40px',
-                fontWeight: 'bold'
+                fontWeight: 'bold',
               })}
             >
               CONTACT ME
