@@ -1,8 +1,10 @@
 const purple60 = `#663399`;
 const purple30 = `#D9BAE8`;
+const purple10 = `#F3F0FA`;
+const blue10 = `#635D74`;
 const grey30 = '#464252';
-const grey90 = `#232129`;
 const grey60 = `#434149`;
+const grey90 = `#232129`;
 const black80 = `#1B1F23`;
 const white = `#fff`;
 const lightWhite = `rgba(255, 255, 255, 0.86)`;
@@ -20,6 +22,7 @@ export default {
   muted: lightGray,
   highlight: opaqueLightYellow,
   heading: grey90,
+  input: purple10,
   prism: {
     background: `#011627`,
     comment: `#809393`,
@@ -46,6 +49,7 @@ export default {
       muted: opaqueLightWhite,
       highlight: purple60,
       heading: white,
+      input: blue10
     },
   },
 };

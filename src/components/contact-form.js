@@ -3,6 +3,11 @@ import { Styled, css } from 'theme-ui';
 
 import styles from './contact-form.module.css';
 
+const fieldStyles = css({
+  backgroundColor: 'input',
+  color: 'text'
+});
+
 const Field = ({ name, placeholder, type, ...restProps }) => {
   const isTextArea = type === 'textarea';
   return (
@@ -17,17 +22,19 @@ const Field = ({ name, placeholder, type, ...restProps }) => {
       </label>
       {isTextArea ? (
         <textarea
-          name={name}
-          placeholder={placeholder}
           rows={5}
           {...restProps}
+          name={name}
+          placeholder={placeholder}
+          css={fieldStyles}
         />
       ) : (
         <input
+          {...restProps}
           name={name}
           placeholder={placeholder}
           type={type}
-          {...restProps}
+          css={fieldStyles}
         />
       )}
     </div>
@@ -86,6 +93,9 @@ const ContactForm = ({ name, method, honeypot }) => {
             <Styled.h2
               css={css({
                 color: 'text',
+                fontFamily: "'Roboto', sans-serif",
+                fontSize: '40px',
+                fontWeight: 'bold'
               })}
             >
               CONTACT ME

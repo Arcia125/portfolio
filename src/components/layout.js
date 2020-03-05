@@ -4,6 +4,7 @@ import { StaticQuery, graphql } from 'gatsby';
 
 import Nav from './nav';
 import './layout.css';
+import Header from '../gatsby-theme-blog/components/header';
 
 const GET_META_TITLE = graphql`
   query SiteTitleQuery {
@@ -18,9 +19,12 @@ const GET_META_TITLE = graphql`
 const Layout = ({ children, solidNav }) => (
   <StaticQuery
     query={GET_META_TITLE}
-    render={data => (
+    render={data => {
+  const siteTitle = data.site.siteMetadata.title;
+
+      return (
       <div className="site-container">
-        <Nav solid={solidNav} siteTitle={data.site.siteMetadata.title} />
+        {solidNav ? <Header title={siteTitle} location={window.location}></Header> : <Nav siteTitle={siteTitle} />}
         <div>
           <main>{children}</main>
           <footer>
@@ -30,7 +34,7 @@ const Layout = ({ children, solidNav }) => (
           </footer>
         </div>
       </div>
-    )}
+    )}}
   />
 );
 

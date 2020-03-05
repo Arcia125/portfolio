@@ -6,22 +6,37 @@ import styles from './portfolio-preview.module.css';
 import { HomepagePreviewSingle } from './homepage-preview-single';
 import LayoutContainer from './layout-container';
 
-const PortfolioPreview = ({ data, title }) => (
-  <Styled.div
-    css={css({
-      '::before': {
-        backgroundColor: 'backgroundAccent',
-      },
-    })}
-    className={styles.portfolioPreview}
-  >
-    <LayoutContainer>
-      {title && <h2 className={styles.portfolioPreviewHeader}>{title}</h2>}
-      <div className={styles.portfolioPreviewProjects}>
-        {data &&
-          data.projects.edges
-            .filter(edge => edge.node.childProjectsJson.homePage)
-            .map(edge => {
+const orderBy = (arr, fn) => [...arr].sort(fn);
+
+const isOnHomePage = edge => edge.node.childProjectsJson.homePage;
+
+const compareIndices = (a, b) => a.node.childProjectsJson.index - b.node.childProjectsJson.index
+
+const getProjectList = data => {
+
+  return orderBy(
+    data.projects.edges.filter(isOnHomePage),
+    compareIndices
+  );
+};
+
+const PortfolioPreview = ({ data, title }) => {
+
+  return (
+    <Styled.div
+      css={css({
+        paddingTop: '175px',
+        '::before': {
+          backgroundColor: 'backgroundAccent',
+        },
+      })}
+      className={styles.portfolioPreview}
+    >
+      <LayoutContainer>
+        {title && <h2 className={styles.portfolioPreviewHeader}>{title}</h2>}
+        <div className={styles.portfolioPreviewProjects}>
+          {data &&
+            getProjectList(data).map(edge => {
               const project = edge.node.childProjectsJson;
               const imageName = project.imageName;
               return (
@@ -34,11 +49,11 @@ const PortfolioPreview = ({ data, title }) => (
                 />
               );
             })}
-      </div>
-    </LayoutContainer>
-  </Styled.div>
-);
-
+        </div>
+      </LayoutContainer>
+    </Styled.div>
+  );
+};
 PortfolioPreview.defaultProps = {
   title: 'PORTFOLIO',
 };

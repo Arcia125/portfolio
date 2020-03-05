@@ -12,7 +12,10 @@ const HomepagePreviewSingle = ({
   image,
   link,
 }) => (
-  <div className={styles.container}>
+  <Styled.div
+    className={styles.container}
+    css={css({ backgroundColor: 'backgroundAccent' })}
+  >
     <Link
       to={link}
       className={classNames(styles.homepagePreviewSingle, className)}
@@ -26,7 +29,7 @@ const HomepagePreviewSingle = ({
         <p>{description}</p>
       </Styled.div>
     </Link>
-  </div>
+  </Styled.div>
 );
 
 export { HomepagePreviewSingle };

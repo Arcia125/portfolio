@@ -38,8 +38,8 @@ const IndexPage = ({ data }) => (
       />
       <Header
         emphasizedIntroText="Hello, "
-        introText="my name is Kevin Hallett. I am a web developer."
-        subheading="I build web apps alongside amazing people. Contact me now to hire me for your next project."
+        introText="my name is Kevin Hallett. I am a software engineer."
+        subheading="I am passionate about building highly interactive web applications."
       />
       <HeaderIllustrations />
       <AboutMeSection />
@@ -97,6 +97,7 @@ export const query = graphql`
             solo
             pagePath
             homePage
+            index
           }
         }
       }

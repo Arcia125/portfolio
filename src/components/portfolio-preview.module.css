@@ -1,5 +1,4 @@
 .portfolio-preview {
-  padding-top: 110px;
 }
 
 .portfolio-preview::before {
@@ -9,7 +8,7 @@
   z-index: -1;
   width: 100%;
   height: 150%;
-  transform: skewY(-12deg) translateY(-110px);
+  transform: skewY(-12deg) translateY(-175px);
 }
 
 .portfolio-preview-projects {
@@ -20,6 +19,7 @@
 .portfolio-preview-header {
   margin-bottom: 3rem;
   text-align: center;
+  font-family: 'Roboto', sans-serif;
 }
 
 @media only screen and (max-width: 800px) {

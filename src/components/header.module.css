@@ -5,6 +5,7 @@
 .main-text {
   color: #fff;
   font-weight: 600;
+  font-family: 'Roboto', sans-serif;
 }
 
 .main-text > span {
