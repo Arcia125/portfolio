@@ -16,6 +16,8 @@ const GET_META_TITLE = graphql`
   }
 `;
 
+const isClientSide = typeof window !== 'undefined';
+
 const Layout = ({ children, solidNav }) => (
   <StaticQuery
     query={GET_META_TITLE}
@@ -23,18 +25,25 @@ const Layout = ({ children, solidNav }) => (
   const siteTitle = data.site.siteMetadata.title;
 
       return (
-      <div className="site-container">
-        {solidNav ? <Header title={siteTitle} location={window.location}></Header> : <Nav siteTitle={siteTitle} />}
-        <div>
-          <main>{children}</main>
-          <footer>
-            © {new Date().getFullYear()}, Built with
-            {` `}
-            <a href="https://www.gatsbyjs.org">Gatsby</a>
-          </footer>
+        <div className="site-container">
+          {solidNav ? (
+            <Header
+              title={siteTitle}
+              location={isClientSide ? window.location : {}}
+            ></Header>
+          ) : (
+            <Nav siteTitle={siteTitle} />
+          )}
+          <div>
+            <main>{children}</main>
+            <footer>
+              © {new Date().getFullYear()}, Built with
+              {` `}
+              <a href="https://www.gatsbyjs.org">Gatsby</a>
+            </footer>
+          </div>
         </div>
-      </div>
-    )}}
+      );}}
   />
 );
 
