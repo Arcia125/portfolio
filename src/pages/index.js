@@ -68,7 +68,7 @@ export const query = graphql`
     starcraft2Bot: file(relativePath: { eq: "project-starcraft2-bot.png" }) {
       ...projectImage
     }
-    automouse: file(relativePath: { eq: "project-automouse.png" }) {
+    tempest: file(relativePath: { eq: "project-tempest.png" }) {
       ...projectImage
     }
     retroPaddleBall: file(
