@@ -1,0 +1,76 @@
+---
+title: Rails on Windows
+date: 2020-08-30
+---
+
+## Installation
+
+I used [scoop](https://scoop.sh/) to install `ruby`.
+
+```bash
+scoop install ruby
+```
+
+Then I installed `msys2` as recommended in the output from the above command.
+
+```bash
+scoop install msys2
+```
+
+Then I used
+
+```bash
+ridk install
+```
+
+then
+
+```bash
+ridk enable
+```
+
+then I installed `rails`.
+
+```bash
+gem install rails
+```
+
+🎉 at this point you should have `ruby`
+
+```bash
+ruby --version
+ruby 2.7.1p83 (2020-03-31 revision a0c7c23c9c) [x64-mingw32]
+```
+
+and `rails`
+
+```bash
+rails --version
+Rails 6.0.3.2
+```
+
+## Hello Rails
+
+Time to build your first rails application, let's scaffold our new app with
+
+```bash
+rails new hello-rails
+```
+
+rails will generate your project files and install your dependencies. Then cd into the new directory
+
+```bash
+cd hello-rails
+```
+
+and run your first rails app
+
+```bash
+rails s
+```
+
+this should start your rails app at `http://localhost:3000/`.
+
+## Further Reading
+
+https://guides.rubyonrails.org/getting_started.html
