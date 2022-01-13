@@ -18,7 +18,7 @@ const DesktopIllustration = ({ className }) => (
     query={graphql`
       query {
         placeholderImage: file(
-          relativePath: { eq: "web-illustration-dark-gradient.png" }
+          relativePath: { eq: "web-illustration-dark-gradient.webp" }
         ) {
           childImageSharp {
             fluid(maxWidth: 720) {
