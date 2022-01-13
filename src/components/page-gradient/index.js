@@ -26,7 +26,7 @@ PageGradient.defaultProps = {
   color1: 'rgb(23, 8, 53)',
   color1Stop: '15%',
   color2: 'rgb(99, 45, 208)',
-  color2Stop: '62%',
+  color2Stop: '75%',
   color3: 'rgb(69, 182, 235)',
   color3Stop: '100%',
 };
