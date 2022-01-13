@@ -5,7 +5,7 @@ import Img from 'gatsby-image';
 const GET_IMAGE = graphql`
   query {
     placeholderImage: file(
-      relativePath: { eq: "mobile-illustration-dark-gradient.webp" }
+      relativePath: { eq: "mobile-illustration-dark-gradient.png" }
     ) {
       childImageSharp {
         fluid(maxWidth: 360) {
