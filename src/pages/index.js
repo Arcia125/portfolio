@@ -85,6 +85,9 @@ export const query = graphql`
     kuesuto: file(relativePath: { eq: "project-kuesuto.png" }) {
       ...projectImage
     }
+    invester: file(relativePath: { eq: "project-invester.png" }) {
+      ...projectImage
+    }
     projects: allFile(filter: { sourceInstanceName: { eq: "projects" } }) {
       edges {
         node {
