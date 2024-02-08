@@ -1,0 +1,12 @@
+{
+  "name": "Kuesuto",
+  "description": "Fantasy action RPG game built with JavaScript",
+  "type": "game",
+  "solo": true,
+  "imageName": "kuesuto",
+  "pagePath": "projects/kuesuto",
+  "relativeImagePath": "project-kuesuto.png",
+  "repo": "https://github.com/Arcia125/kuesuto",
+  "homePage": true,
+  "index": 0
+}
