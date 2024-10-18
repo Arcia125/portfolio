@@ -4,7 +4,7 @@ import Img from 'gatsby-image';
 import classNames from 'classnames';
 
 import Layout from '../components/layout';
-import styles from './project.module.css';
+import * as styles from './project.module.css';
 
 export default ({ data, pageContext }) => {
   return (

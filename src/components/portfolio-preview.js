@@ -2,7 +2,7 @@ import React from 'react';
 import Img from 'gatsby-image';
 
 import { Styled, css } from 'theme-ui';
-import styles from './portfolio-preview.module.css';
+import * as styles from './portfolio-preview.module.css';
 import { HomepagePreviewSingle } from './homepage-preview-single';
 import LayoutContainer from './layout-container';
 

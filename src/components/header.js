@@ -2,7 +2,7 @@ import React from 'react';
 
 import { HeaderPageGradient } from './header-page-gradient';
 import LayoutContainer from './layout-container';
-import styles from './header.module.css';
+import * as styles from './header.module.css';
 
 const Header = ({ emphasizedIntroText, introText, subheading }) => (
   <>

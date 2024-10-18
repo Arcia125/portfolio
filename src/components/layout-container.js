@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { layout } from '../constants/layout';
-import styles from './layout-container.module.css';
+import * as styles from './layout-container.module.css';
 
 const LayoutContainer = ({ children }) => {
   return (

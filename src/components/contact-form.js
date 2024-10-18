@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Styled, css } from 'theme-ui';
 
-import styles from './contact-form.module.css';
+import * as styles from './contact-form.module.css';
 
 const fieldStyles = css({
   backgroundColor: 'input',

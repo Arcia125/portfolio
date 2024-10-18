@@ -3,7 +3,7 @@ import classNames from 'classnames';
 import { Link } from 'gatsby';
 import { Styled, css } from 'theme-ui';
 
-import styles from './homepage-preview-single.module.css';
+import * as styles from './homepage-preview-single.module.css';
 
 const HomepagePreviewSingle = ({
   className,

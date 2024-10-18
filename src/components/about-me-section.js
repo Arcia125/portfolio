@@ -1,6 +1,6 @@
 import React from 'react';
 
-import styles from './about-me-section.module.css';
+import * as styles from './about-me-section.module.css';
 import LayoutContainer from './layout-container';
 
 const AboutMeSection = ({ children }) => (
