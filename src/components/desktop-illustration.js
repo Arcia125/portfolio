@@ -1,6 +1,6 @@
 import React from 'react';
 import { StaticQuery, graphql } from 'gatsby';
-import Img from 'gatsby-image';
+import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 
 /*
  * This component is built using `gatsby-image` to automatically serve optimized
@@ -17,24 +17,20 @@ const DesktopIllustration = ({ className }) => (
   <StaticQuery
     query={graphql`
       query {
-        placeholderImage: file(
+        desktopIllustration: file(
           relativePath: { eq: "web-illustration-dark-gradient.webp" }
         ) {
           childImageSharp {
-            fluid(maxWidth: 720) {
-              ...GatsbyImageSharpFluid
-            }
+            gatsbyImageData(
+              layout: CONSTRAINED
+              quality: 100
+            )
           }
         }
       }
     `}
     render={data => (
-      <Img
-        loading="eager"
-        fadeIn={false}
-        className={className}
-        fluid={data.placeholderImage.childImageSharp.fluid}
-      />
+      <GatsbyImage className={className} image={getImage(data.desktopIllustration)} />
     )}
   />
 );

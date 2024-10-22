@@ -1,7 +1,7 @@
 import React from 'react';
 import classNames from 'classnames';
 import { Link } from 'gatsby';
-import { Styled, css } from 'theme-ui';
+import { Themed, css } from 'theme-ui';
 
 import * as styles from './homepage-preview-single.module.css';
 
@@ -12,7 +12,7 @@ const HomepagePreviewSingle = ({
   image,
   link,
 }) => (
-  <Styled.div
+  <Themed.div
     className={styles.container}
     css={css({ backgroundColor: 'backgroundAccent' })}
   >
@@ -21,15 +21,15 @@ const HomepagePreviewSingle = ({
       className={classNames(styles.homepagePreviewSingle, className)}
     >
       <div className={styles.homepagePreviewSingleImageContainer}>{image}</div>
-      <Styled.div
+      <Themed.div
         css={css({ backgroundColor: 'backgroundAccent', color: 'text' })}
         className={styles.homepagePreviewSingleContent}
       >
         <h3 className={styles.homepagePreviewSingleName}>{name}</h3>
         <p>{description}</p>
-      </Styled.div>
+      </Themed.div>
     </Link>
-  </Styled.div>
+  </Themed.div>
 );
 
 export { HomepagePreviewSingle };

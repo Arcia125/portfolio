@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Styled, css } from 'theme-ui';
+import { Themed, css } from 'theme-ui';
 
 import * as styles from './contact-form.module.css';
 
@@ -60,7 +60,7 @@ const ContactForm = ({ name, method, honeypot }) => {
   const [messageVal, setMessageVal] = useState('');
   const [success, setSuccess] = useState(false);
   return (
-    <Styled.div
+    <Themed.div
       css={css({
         padding: 10,
         '::before': {
@@ -74,23 +74,23 @@ const ContactForm = ({ name, method, honeypot }) => {
         },
       })}
     >
-      <Styled.div
+      <Themed.div
         css={css({
           bg: 'raised',
         })}
         className={styles.container}
       >
         {success ? (
-          <Styled.h2
+          <Themed.h2
             css={css({
               color: 'text',
             })}
           >
             THANK YOU <span role="img" aria-label="smiling emoji">😊</span>
-          </Styled.h2>
+          </Themed.h2>
         ) : (
           <>
-            <Styled.h2
+            <Themed.h2
               css={css({
                 color: 'text',
                 fontFamily: "'Roboto', sans-serif",
@@ -99,7 +99,7 @@ const ContactForm = ({ name, method, honeypot }) => {
               })}
             >
               CONTACT ME
-            </Styled.h2>
+            </Themed.h2>
             <form
               className={styles.form}
               name={name}
@@ -163,8 +163,8 @@ const ContactForm = ({ name, method, honeypot }) => {
             </form>
           </>
         )}
-      </Styled.div>
-    </Styled.div>
+      </Themed.div>
+    </Themed.div>
   );
 };
 

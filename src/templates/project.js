@@ -1,6 +1,6 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import Img from 'gatsby-image';
+import GatsbyImage from 'gatsby-image';
 import classNames from 'classnames';
 
 import Layout from '../components/layout';
@@ -19,14 +19,14 @@ export default ({ data, pageContext }) => {
             className={classNames(styles.button, styles.github)}
           >
             VIEW ON GITHUB
-            <Img
+            <GatsbyImage
               className={styles.githubLogo}
               fixed={data.githubMarkWhite.childImageSharp.fixed}
             />
           </a>
         </div>
         <div className={styles.projectImage}>
-          <Img fluid={data.projectImage.childImageSharp.fluid} />
+          <GatsbyImage fluid={data.projectImage.childImageSharp.fluid} />
         </div>
         {data && data.markdownRemark && (
           <div dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }} />

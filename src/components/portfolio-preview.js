@@ -1,7 +1,7 @@
 import React from 'react';
-import Img from 'gatsby-image';
+import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 
-import { Styled, css } from 'theme-ui';
+import { Themed, css } from 'theme-ui';
 import * as styles from './portfolio-preview.module.css';
 import { HomepagePreviewSingle } from './homepage-preview-single';
 import LayoutContainer from './layout-container';
@@ -23,7 +23,7 @@ const getProjectList = data => {
 const PortfolioPreview = ({ data, title }) => {
 
   return (
-    <Styled.div
+    <Themed.div
       css={css({
         paddingTop: '175px',
         '::before': {
@@ -44,14 +44,14 @@ const PortfolioPreview = ({ data, title }) => {
                   key={project.name}
                   name={project.name}
                   description={project.description}
-                  image={<Img fluid={data[imageName].childImageSharp.fluid} />}
+                  image={<GatsbyImage image={getImage(data[imageName])} />}
                   link={`/${project.pagePath}`}
                 />
               );
             })}
         </div>
       </LayoutContainer>
-    </Styled.div>
+    </Themed.div>
   );
 };
 PortfolioPreview.defaultProps = {

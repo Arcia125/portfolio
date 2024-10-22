@@ -1,21 +1,21 @@
 import React from "react"
 import { StaticQuery, graphql } from "gatsby"
-import Img from "gatsby-image"
+import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 
 const CleanCodeIllustration = ({ className }) => (
   <StaticQuery
     query={graphql`
       query {
-        placeholderImage: file(relativePath: { eq: "clean-code-illustration.webp" }) {
+        cleanCodeIllustration: file(relativePath: { eq: "clean-code-illustration.webp" }) {
           childImageSharp {
-            fluid(maxWidth: 300) {
-              ...GatsbyImageSharpFluid
-            }
+            gatsbyImageData(
+              layout: FIXED
+            )
           }
         }
       }
     `}
-    render={data => <Img className={className} fluid={data.placeholderImage.childImageSharp.fluid} />}
+    render={data => <GatsbyImage className={className} image={getImage(data.cleanCodeIllustration)} />}
   />
 )
 export {
