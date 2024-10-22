@@ -50,15 +50,6 @@ const IndexPage = ({ data }) => (
   </>
 );
 
-// export const projectImageFragment = graphql`
-//   fragment projectImage on File {
-//     childImageSharp {
-//       fluid(maxWidth: 320) {
-//         ...GatsbyImageSharpFluid
-//       }
-//     }
-//   }
-// `;
 export const projectImageFragment = graphql`
   fragment projectImage on File {
     childImageSharp {
