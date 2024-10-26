@@ -35,6 +35,11 @@
     "react-helmet": "^6.1.0",
     "react-switch": "^7.0.0"
   },
+  "overrides": {
+    "gatsby-plugin-sharp": "^5.13.1",
+    "gatsby-transformer-sharp": "^5.13.1",
+    "gatsby-plugin-mdx": "^5.13.1"
+  },
   "keywords": [
     "gatsby",
     "blog",
@@ -46,7 +51,8 @@
     "develop": "gatsby develop",
     "start": "npm run develop",
     "serve": "gatsby serve",
-    "test": "echo \"Write tests! -> https://gatsby.app/unit-testing\""
+    "test": "echo \"Write tests! -> https://gatsby.app/unit-testing\"",
+    "reset": "@powershell -NoProfile -ExecutionPolicy Unrestricted -Command .\\scripts\\reset-proj.ps1"
   },
   "repository": {
     "type": "git",
