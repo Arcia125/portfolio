@@ -14,7 +14,12 @@ module.exports = {
       },
     },
     `gatsby-plugin-image`,
-    `gatsby-transformer-sharp`,
+    {
+      resolve: `gatsby-transformer-sharp`,
+      options: {
+        checkSupportedExtensions: true
+      }
+    },
     `gatsby-plugin-sharp`,
     `gatsby-transformer-json`,
     {

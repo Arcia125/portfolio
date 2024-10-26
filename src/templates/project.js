@@ -1,10 +1,10 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import GatsbyImage from 'gatsby-image';
 import classNames from 'classnames';
 
 import Layout from '../components/layout';
 import * as styles from './project.module.css';
+import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 
 export default ({ data, pageContext }) => {
   return (
@@ -21,12 +21,12 @@ export default ({ data, pageContext }) => {
             VIEW ON GITHUB
             <GatsbyImage
               className={styles.githubLogo}
-              fixed={data.githubMarkWhite.childImageSharp.fixed}
+              image={getImage(data.githubMarkWhite)}
             />
           </a>
         </div>
         <div className={styles.projectImage}>
-          <GatsbyImage fluid={data.projectImage.childImageSharp.fluid} />
+          <GatsbyImage image={getImage(data.projectImage)}/>
         </div>
         {data && data.markdownRemark && (
           <div dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }} />
@@ -40,16 +40,16 @@ export const query = graphql`
   query($relativeImagePath: String!, $pagePath: String!) {
     projectImage: file(relativePath: { eq: $relativeImagePath }) {
       childImageSharp {
-        fluid(maxWidth: 700) {
-          ...GatsbyImageSharpFluid
-        }
+        gatsbyImageData(layout: CONSTRAINED)
       }
     }
     githubMarkWhite: file(relativePath: { eq: "github-mark-light-32px.png" }) {
       childImageSharp {
-        fixed(width: 24, height: 24) {
-          ...GatsbyImageSharpFixed
-        }
+        gatsbyImageData(
+          layout: FIXED
+          height: 24
+          width: 24
+        )
       }
     }
     markdownRemark(frontmatter: { path: { eq: $pagePath } }) {
