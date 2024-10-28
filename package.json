@@ -38,7 +38,7 @@
   "overrides": {
     "gatsby-plugin-sharp": "^5.13.1",
     "gatsby-transformer-sharp": "^5.13.1",
-    "gatsby-plugin-mdx": "^5.13.1"
+    "gatsby-plugin-mdx": "3.20.0"
   },
   "keywords": [
     "gatsby",
@@ -51,8 +51,7 @@
     "develop": "gatsby develop",
     "start": "npm run develop",
     "serve": "gatsby serve",
-    "test": "echo \"Write tests! -> https://gatsby.app/unit-testing\"",
-    "reset": "@powershell -NoProfile -ExecutionPolicy Unrestricted -Command .\\scripts\\reset-proj.ps1"
+    "reset": ".\\scripts\\reset-proj.bat"
   },
   "repository": {
     "type": "git",
