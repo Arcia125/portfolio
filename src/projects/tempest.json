@@ -1,6 +1,6 @@
 {
   "name": "Tempest",
-  "description": "Tempest is a League of Legends companion app built with TypeScript and GraphQL, featuring a WebGL-powered thunderstorm animation. Users can look up summoner names to view detailed match histories and stats.",
+  "description": "League of Legends companion app built with TypeScript and GraphQL, featuring a WebGL-powered thunderstorm animation. Users can look up summoner names to view detailed match histories and stats.",
   "type": "game",
   "solo": true,
   "imageName": "tempest",

@@ -1,6 +1,6 @@
 {
   "name": "Kuesuto",
-  "description": "Kuesuto is a handcrafted, pixel-art action RPG inspired by The Legend of Zelda: A Link to the Past. Explore an enchanted world, battle foes using real-time combat, and level up as you progress. Built from scratch with TypeScript and featuring an original pathfinding library for smarter enemy AI.",
+  "description": "Handcrafted, pixel-art action RPG inspired by The Legend of Zelda: A Link to the Past. Explore an enchanted world, battle foes using real-time combat, and level up as you progress. Built from scratch with TypeScript and featuring an original pathfinding library for smarter enemy AI.",
   "type": "game",
   "solo": true,
   "imageName": "kuesuto",
