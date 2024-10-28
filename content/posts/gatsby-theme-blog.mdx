@@ -1,0 +1,64 @@
+---
+title: Gatsby V5 and gatsby-theme-blog
+date: 2024-10-27
+---
+# Solving Dependency Issues in My Gatsby Portfolio Project
+
+In updating my personal blog, built with Gatsby, I encountered an array of dependency errors and compatibility challenges. My initial objective was to update the project to work with a modern Node.js environment, but as often happens with JavaScript projects, upgrading packages introduced unexpected issues. Here’s how I resolved the issues, alongside tips for anyone in a similar situation.
+
+## The Problem
+
+The portfolio was initially built on Gatsby v4, but I upgraded to Gatsby v5 to leverage performance improvements and new features. After updating Gatsby and its dependencies, I ran into compatibility issues, such as:
+
+* `Class constructor GraphQLList cannot be invoked without 'new'`, an error due to an outdated version of `gatsby-transformer-sharp`.
+* Plugin warnings and errors in `gatsby-theme-blog`, `gatsby-plugin-sharp`, and others that required specific versions of Gatsby or dependencies incompatible with my updated setup.
+
+Here’s how I methodically approached solving these issues and got the project running smoothly again.
+
+## Step 1: Identify Compatibility Issues
+
+First, I checked the `package.json` file to identify which versions of dependencies were causing issues. Running `npm list gatsby-transformer-sharp` showed multiple versions, confirming that some plugins, such as `gatsby-theme-blog`, were still dependent on older versions of Gatsby and related plugins.
+
+## Step 2: Updating Dependencies
+
+To resolve these issues, I needed to ensure all packages were compatible with Gatsby v5. Here’s how I approached the upgrade:
+
+1. Use the Latest Gatsby-Related Packages: I updated core plugins such as `gatsby-plugin-sharp`, `gatsby-transformer-sharp`, and `gatsby-plugin-image` to the latest versions: ```bash npm install gatsby-plugin-sharp@latest gatsby-transformer-sharp@latest gatsby-plugin-image@latest ```
+
+2. Remove Deprecated Plugins: Some plugins, like `gatsby-plugin-react-helmet`, were deprecated in favor of Gatsby’s built-in `<Head />` component. Removing these outdated plugins reduced clutter and eliminated unnecessary compatibility issues.
+
+## Step 3: Adding an “Overrides” Block for Final Compatibility
+
+After updating most plugins, some legacy packages like `gatsby-theme-blog` still required incompatible versions of `gatsby-transformer-sharp` and `gatsby-plugin-mdx`. To force these packages to use compatible versions, I added an `overrides` block to my `package.json`, specifying the correct versions for each:
+
+```json
+"overrides": {
+  "gatsby-plugin-sharp": "^5.13.1",
+  "gatsby-transformer-sharp": "^5.13.1",
+  "gatsby-plugin-mdx": "3.20.0"
+}
+```
+
+This block ensures all plugins in the project rely on a single compatible version, reducing the risk of conflicts and solving most remaining errors.
+
+## Step 4: Rebuild and Test
+
+After implementing these changes, I cleared Gatsby’s cache and reinstalled all packages to ensure a clean build environment:
+
+```bash gatsby clean rm -rf node_modules package-lock.json npm install ```
+
+Running `npm run develop` and `npm run build` now completed successfully, without any version conflicts or warnings.
+
+## Key Takeaways
+
+This troubleshooting process reinforced a few principles that are crucial when managing JavaScript dependencies:
+
+1. Use Compatibility Tools: Tools like `npm list` are invaluable for quickly diagnosing version conflicts.
+2. Override Judiciously: The `overrides` block is powerful for forcing dependencies to align, but it should be used sparingly to avoid unexpected issues.
+3. Stay Updated on Best Practices: Gatsby’s evolving API, including built-in features like `<Head />`, offers cleaner solutions and reduces the need for third-party plugins.
+
+## Final Thoughts
+
+Debugging this issue involved deep dives into compatibility across versions, balancing my Gatsby setup with modern packages while maintaining stability. For future projects, I’ll be sure to check plugin compatibility early in the process. I’m excited to continue using these skills to build dynamic, modern web applications that showcase my expertise as a frontend engineer.
+
+I hope this post proves helpful to others who might encounter similar issues with Gatsby or JavaScript dependency management!
