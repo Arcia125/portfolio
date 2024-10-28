@@ -1,6 +1,6 @@
 {
   "name": "Pixel Fire Animation",
-  "description": "Fire animation made with Java.",
+  "description": "A mesmerizing pixelated fire animation created with Java Swing, where fire burns across the screen and interacts with the cursor, offering customizable color schemes.",
   "type": "animation",
   "solo": true,
   "imageName": "fireAnimation",

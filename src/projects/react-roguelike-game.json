@@ -1,6 +1,6 @@
 {
-  "name": "React Roguelike Game",
-  "description": "A game with procedurally generated levels and a progression/loot system.",
+  "name": "React Roguelike",
+  "description": "A procedurally generated roguelike game built with React and Redux, featuring dungeon exploration and strategic leveling to defeat the final boss.",
   "type": "game",
   "solo": true,
   "imageName": "roguelike",

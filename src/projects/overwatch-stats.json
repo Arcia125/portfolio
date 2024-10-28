@@ -1,6 +1,6 @@
 {
   "name": "Overwatch Stats",
-  "description": "Mobile app to search for and view overwatch player profiles built with React Native.",
+  "description": "Overstats is a React Native mobile app for tracking Overwatch player stats. Users can search by player name to view details like portrait, level, and rank in an easy-to-navigate profile snapshot.",
   "type": "mobile",
   "solo": true,
   "imageName": "owStats",

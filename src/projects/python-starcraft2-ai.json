@@ -1,6 +1,6 @@
 {
-  "name": "Python Starcraft2 AI",
-  "description": "Rule based AI that plays starcraft 2 utilizing the official Blizzard API.",
+  "name": "Starcraft 2 AI Bots",
+  "description": "A series of custom AI bots created for Starcraft 2, with unique strategies for each race. Built using the official Blizzard API, the bots can play against custom AI, Blizzard AI, or human players.",
   "type": "ai/machine learning",
   "solo": true,
   "imageName": "starcraft2Bot",
