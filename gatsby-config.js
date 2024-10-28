@@ -33,8 +33,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `Kevin Hallett - Software Engineer - Personal Portfolio`,
+        short_name: `Kevin Hallett - Software Engineer`,
         start_url: `/`,
         background_color: `rgb(99, 45, 208)`,
         theme_color: `rgb(99, 45, 208)`,
