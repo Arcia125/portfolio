@@ -3,74 +3,104 @@ title: Rails on Windows
 date: 2020-08-30
 ---
 
-## Installation
+## Setting Up Ruby on Rails on Windows
 
-I used [scoop](https://scoop.sh/) to install `ruby`.
+Setting up Rails on Windows can be a straightforward process with tools like [Scoop](https://scoop.sh/) and `msys2`. This guide walks you through the installation of Ruby, Rails, and all necessary dependencies, so you can start developing Rails applications locally on Windows.
+
+---
+
+## Step 1: Installing Ruby with Scoop
+
+First, use Scoop to install `ruby`, a simple and efficient package manager for Windows.
 
 ```bash
 scoop install ruby
 ```
 
-Then I installed `msys2` as recommended in the output from the above command.
+Once installed, Scoop will prompt you to add the `msys2` toolchain, which is essential for managing Windows dependencies.
+
+### Step 2: Install `msys2`
+
+Now, install `msys2` using Scoop to ensure your environment has access to crucial build tools.
 
 ```bash
 scoop install msys2
 ```
 
-Then I used
+After this step, you'll have a compatible Ruby environment ready for Rails setup.
+
+---
+
+## Step 3: Setting Up `ridk`
+
+To further configure `msys2`, use the `ridk` tool included with Ruby to finalize installation. Run these commands in order:
 
 ```bash
 ridk install
 ```
 
-then
+Then enable the environment:
 
 ```bash
 ridk enable
 ```
 
-then I installed `rails`.
+With this, you’re ready to install Rails.
+
+---
+
+## Step 4: Installing Rails
+
+Now you can install Rails using RubyGems:
 
 ```bash
 gem install rails
 ```
 
-🎉 at this point you should have `ruby`
+If all went well, you should now have both `ruby` and `rails` installed.
+
+### Checking Versions
+
+Verify your installation by checking the Ruby and Rails versions:
 
 ```bash
 ruby --version
-ruby 2.7.1p83 (2020-03-31 revision a0c7c23c9c) [x64-mingw32]
-```
+# Expected Output: ruby 2.7.1p83 (2020-03-31 revision a0c7c23c9c) [x64-mingw32]
 
-and `rails`
-
-```bash
 rails --version
-Rails 6.0.3.2
+# Expected Output: Rails 6.0.3.2
 ```
 
-## Hello Rails
+---
 
-Time to build your first rails application, let's scaffold our new app with
+## Step 5: Building Your First Rails Application
+
+With Ruby and Rails installed, let’s create a Rails application to confirm everything is working correctly.
+
+1. Scaffold a new Rails app by running:
 
 ```bash
 rails new hello-rails
 ```
 
-rails will generate your project files and install your dependencies. Then cd into the new directory
+   This command generates all the necessary files and installs your app's dependencies.
+
+2. Navigate into the app directory:
 
 ```bash
 cd hello-rails
 ```
 
-and run your first rails app
+3. Start the Rails server:
 
 ```bash
 rails s
 ```
 
-this should start your rails app at `http://localhost:3000/`.
+Your Rails application should now be running locally at `http://localhost:3000/`. Open this URL in your browser to see the default Rails welcome page.
+
+---
 
 ## Further Reading
 
-https://guides.rubyonrails.org/getting_started.html
+For a deeper dive into Rails development, check out the [Rails Guides](https://guides.rubyonrails
