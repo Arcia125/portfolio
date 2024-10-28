@@ -18,8 +18,8 @@ module.exports = {
     {
       resolve: `gatsby-transformer-sharp`,
       options: {
-        checkSupportedExtensions: true
-      }
+        checkSupportedExtensions: true,
+      },
     },
     `gatsby-plugin-sharp`,
     `gatsby-transformer-json`,
@@ -59,7 +59,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        trackingId: 'UA-84868304-1',
+        trackingId: 'G-LB5HKHF5V7',
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
