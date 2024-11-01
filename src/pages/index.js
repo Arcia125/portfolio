@@ -38,8 +38,8 @@ const IndexPage = ({ data }) => (
       />
       <Header
         emphasizedIntroText="Hello, "
-        introText="my name is Kevin Hallett. I am a software engineer."
-        subheading="I am passionate about building highly interactive web applications."
+        introText="I'm Kevin Hallett—a frontend-focused Software Engineer passionate about crafting interactive, user-centered applications."
+        subheading="With expertise in modern frameworks, I bring ideas to life with responsive, seamless, and efficient user experiences."
       />
       <HeaderIllustrations />
       <AboutMeSection />

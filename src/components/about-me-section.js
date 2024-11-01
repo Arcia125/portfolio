@@ -10,7 +10,16 @@ const AboutMeSection = ({ children }) => (
       <div>
         <h2>ABOUT ME</h2>
         <p>
-          I am a self-taught full stack engineer with extensive experience in building single page applications.
+          I'm a self-taught Full Stack Engineer with deep expertise in
+          single-page applications. Over the years, I've refined my skills in
+          both frontend and backend development, specializing in technologies
+          like React, TypeScript, and GraphQL. Driven by curiosity and a love of
+          learning, I’ve built scalable, interactive web applications for
+          diverse projects—from gaming companions to complex business tools.
+        </p>
+        <p>
+          When I'm not coding, I'm exploring new frameworks, optimizing my work,
+          and contributing to open-source projects.
         </p>
       </div>
     </section>
