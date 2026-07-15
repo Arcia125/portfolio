@@ -4,7 +4,6 @@ import { StaticQuery, graphql } from 'gatsby';
 
 import Nav from './nav';
 import './layout.css';
-import Header from '../gatsby-theme-blog/components/header';
 
 const GET_META_TITLE = graphql`
   query SiteTitleQuery {
@@ -16,34 +15,31 @@ const GET_META_TITLE = graphql`
   }
 `;
 
-const isClientSide = typeof window !== 'undefined';
-
-const Layout = ({ children, solidNav }) => (
+const Layout = ({ children }) => (
   <StaticQuery
     query={GET_META_TITLE}
     render={data => {
-  const siteTitle = data.site.siteMetadata.title;
+      const siteTitle = data.site.siteMetadata.title;
 
       return (
         <div className="site-container">
-          {solidNav ? (
-            <Header
-              title={siteTitle}
-              location={isClientSide ? window.location : {}}
-            ></Header>
-          ) : (
-            <Nav siteTitle={siteTitle} />
-          )}
-          <div>
-            <main>{children}</main>
-            <footer>
-              © {new Date().getFullYear()}, Built with
-              {` `}
-              <a href="https://www.gatsbyjs.org">Gatsby</a>
-            </footer>
-          </div>
+          <Nav siteTitle={siteTitle} />
+          <main>{children}</main>
+          <footer className="site-footer">
+            <span>© {new Date().getFullYear()} Kevin Hallett</span>
+            <span>
+              <a href="https://github.com/Arcia125" rel="noopener noreferrer">
+                GitHub
+              </a>
+              {' · '}
+              <a href="mailto:contact@kevinmhallett.com">
+                contact@kevinmhallett.com
+              </a>
+            </span>
+          </footer>
         </div>
-      );}}
+      );
+    }}
   />
 );
 

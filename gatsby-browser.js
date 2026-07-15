@@ -4,4 +4,5 @@
  * See: https://www.gatsbyjs.org/docs/browser-apis/
  */
 
-// You can delete this file if you're not using it
+// Global design tokens + webfonts, applied to every page (including the blog theme).
+import './src/styles/global.css';

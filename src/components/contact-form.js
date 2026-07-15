@@ -1,40 +1,32 @@
 import React, { useState } from 'react';
-import { Themed, css } from 'theme-ui';
 
 import * as styles from './contact-form.module.css';
+import LayoutContainer from './layout-container';
 
-const fieldStyles = css({
-  backgroundColor: 'input',
-  color: 'text'
-});
-
-const Field = ({ name, placeholder, type, ...restProps }) => {
+const Field = ({ name, label, placeholder, type, ...restProps }) => {
   const isTextArea = type === 'textarea';
   return (
     <div className={styles.field}>
-      <label
-        css={css({
-          color: 'text',
-        })}
-        htmlFor={name}
-      >
-        {name}
+      <label className={styles.label} htmlFor={name}>
+        {label}
       </label>
       {isTextArea ? (
         <textarea
-          rows={5}
+          rows={6}
           {...restProps}
+          id={name}
           name={name}
           placeholder={placeholder}
-          css={fieldStyles}
+          className={styles.input}
         />
       ) : (
         <input
           {...restProps}
+          id={name}
           name={name}
           placeholder={placeholder}
           type={type}
-          css={fieldStyles}
+          className={styles.input}
         />
       )}
     </div>
@@ -60,46 +52,26 @@ const ContactForm = ({ name, method, honeypot }) => {
   const [messageVal, setMessageVal] = useState('');
   const [success, setSuccess] = useState(false);
   return (
-    <Themed.div
-      css={css({
-        padding: 10,
-        '::before': {
-          content: '""',
-          position: 'absolute',
-          backgroundColor: 'background',
-          left: 0,
-          zIndex: -1,
-          height: '100%',
-          width: '100%',
-        },
-      })}
-    >
-      <Themed.div
-        css={css({
-          bg: 'raised',
-        })}
-        className={styles.container}
-      >
-        {success ? (
-          <Themed.h2
-            css={css({
-              color: 'text',
-            })}
-          >
-            THANK YOU <span role="img" aria-label="smiling emoji">😊</span>
-          </Themed.h2>
-        ) : (
-          <>
-            <Themed.h2
-              css={css({
-                color: 'text',
-                fontFamily: "'Roboto', sans-serif",
-                fontSize: '40px',
-                fontWeight: 'bold',
-              })}
-            >
-              CONTACT ME
-            </Themed.h2>
+    <LayoutContainer>
+      <section className={styles.contactSection} id="contact">
+        <p className="eyebrow">Contact</p>
+        <div className={styles.columns}>
+          <div>
+            <h2 className="section-heading">Get in touch</h2>
+            <p className={styles.blurb}>
+              Have a role, a project, or just a question about something I
+              built? Send a message — or email{' '}
+              <a href="mailto:contact@kevinmhallett.com">
+                contact@kevinmhallett.com
+              </a>{' '}
+              directly.
+            </p>
+          </div>
+          {success ? (
+            <p className={styles.success} role="status">
+              Message sent — thanks. I'll get back to you soon.
+            </p>
+          ) : (
             <form
               className={styles.form}
               name={name}
@@ -127,7 +99,7 @@ const ContactForm = ({ name, method, honeypot }) => {
             >
               <p className={styles.hidden}>
                 <label>
-                  Don’t fill this out if you're human:{' '}
+                  Don't fill this out if you're human:{' '}
                   <input
                     name={honeypot}
                     value={honeypotVal}
@@ -137,14 +109,16 @@ const ContactForm = ({ name, method, honeypot }) => {
               </p>
               <Field
                 name="name"
-                placeholder="Your Name"
+                label="Name"
+                placeholder="Your name"
                 type="text"
                 value={nameVal}
                 onChange={createChangeHandler(setNameVal)}
               />
               <Field
                 name="email"
-                placeholder="example@email.com"
+                label="Email"
+                placeholder="you@example.com"
                 type="email"
                 required
                 value={emailVal}
@@ -152,19 +126,20 @@ const ContactForm = ({ name, method, honeypot }) => {
               />
               <Field
                 name="message"
-                placeholder="Message"
+                label="Message"
+                placeholder="What can I help with?"
                 type="textarea"
                 value={messageVal}
                 onChange={createChangeHandler(setMessageVal)}
               />
               <button className={styles.button} type="submit">
-                SUBMIT
+                Send message
               </button>
             </form>
-          </>
-        )}
-      </Themed.div>
-    </Themed.div>
+          )}
+        </div>
+      </section>
+    </LayoutContainer>
   );
 };
 

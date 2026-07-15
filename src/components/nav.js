@@ -1,49 +1,41 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'gatsby';
-import classNames from 'classnames';
 
 import './nav.css';
 import { layout } from '../constants/layout';
 
-const NavLink = ({ className, children, ...restProps }) => (
-  <Link
-    activeClassName="active"
-    className={classNames('main-site-navigation-link', className)}
-    {...restProps}
-  >
-    {children}
-  </Link>
-);
-
-const Nav = ({ siteTitle, solid }) => (
-  <nav
-    className={classNames({ 'main-site-navigation': true, solid })}
-    style={{
-      marginBottom: `1.45rem`,
-    }}
-  >
+const Nav = ({ siteTitle }) => (
+  <nav className="main-site-navigation">
     <div
       className="main-site-navigation-links"
-      style={{
-        maxWidth: layout.maxWidth,
-        padding: layout.padding,
-      }}
+      style={{ maxWidth: layout.maxWidth }}
     >
-      <NavLink className="site-title" to="/">
+      <Link className="site-title" to="/">
         {siteTitle}
-      </NavLink>
+      </Link>
       <div className="nav-right-section">
-        <NavLink
-          className="blog-link"
-          to="/blog"
-          activeStyle={{ color: '#fff' }}
+        <Link
+          className="main-site-navigation-link"
+          to="/#projects"
         >
-          BLOG
-        </NavLink>
-        {/* <NavLink className="portfolio-link" to="/portfolio">
-            PORTFOLIO
-          </NavLink> */}
+          Projects
+        </Link>
+        <Link
+          className="main-site-navigation-link"
+          activeClassName="active"
+          partiallyActive
+          to="/blog"
+        >
+          Blog
+        </Link>
+        <a
+          className="main-site-navigation-link"
+          href="https://github.com/Arcia125"
+          rel="noopener noreferrer"
+        >
+          GitHub
+        </a>
       </div>
     </div>
   </nav>

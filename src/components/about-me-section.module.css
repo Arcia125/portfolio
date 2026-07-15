@@ -1,28 +1,63 @@
 .about-me-section {
+  composes: section from global;
+}
+
+.columns {
+  display: grid;
+  grid-template-columns: minmax(0, 1.7fr) minmax(0, 1fr);
+  gap: 3.5rem;
+  align-items: start;
+}
+
+.heading {
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+.bio p {
+  color: var(--mist);
+  max-width: 58ch;
+}
+
+.stack-panel {
+  border: 1px solid var(--line);
+  background: var(--dusk);
+  padding: 1.75rem;
+  box-shadow: var(--sprite-shadow-storm);
+}
+
+.stack-title {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--storm);
+  margin-bottom: 1.25rem;
+}
+
+.stack-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  text-align: right;
-  position: relative;
-  max-width: 25rem;
-  padding-top: 75px;
-  padding-bottom: 75px;
+  flex-wrap: wrap;
+  gap: 0.6rem;
 }
 
-.about-me-section h2 {
-  margin-bottom: 48px;
-  font-family: 'Roboto', sans-serif;
+.stack-item {
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  color: var(--parchment);
+  border: 1px solid var(--line);
+  padding: 0.3rem 0.7rem;
+  margin: 0;
 }
 
-.about-me-section p {
-  line-height: 2.2rem;
-  font-family: 'Roboto', sans-serif;
-}
-
-@media only screen and (max-width: 1350px) {
-  .about-me-section {
-    width: 70%;
-    padding-top: 35px;
-    padding-bottom: 35px;
+@media screen and (max-width: 800px) {
+  .columns {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
   }
 }

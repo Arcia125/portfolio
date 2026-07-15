@@ -1,0 +1,27 @@
+/* Webfonts are loaded via head links in gatsby-ssr.js (preconnect + link),
+   not a CSS @import, so they don't serialize behind this stylesheet. */
+
+:root {
+  /* Palette — twilight arcade */
+  --void: #171430;
+  --void-deep: #100e22;
+  --dusk: #211d3d;
+  --dusk-raised: #2b2650;
+  --parchment: #efeae0;
+  --ember: #ff8c42;
+  --ember-deep: #d96b1f;
+  --storm: #7fa8ff;
+  --mist: #9a93b8;
+  --line: rgba(239, 234, 224, 0.12);
+  --line-faint: rgba(239, 234, 224, 0.07);
+
+  /* Type */
+  --font-display: 'Bricolage Grotesque', 'Segoe UI', sans-serif;
+  --font-body: 'Atkinson Hyperlegible', 'Segoe UI', sans-serif;
+  --font-mono: 'IBM Plex Mono', Consolas, monospace;
+  --font-pixel: 'Silkscreen', 'IBM Plex Mono', monospace;
+
+  /* Signature sprite shadow */
+  --sprite-shadow: 6px 6px 0 rgba(255, 140, 66, 0.22);
+  --sprite-shadow-storm: 6px 6px 0 rgba(127, 168, 255, 0.2);
+}

@@ -1,47 +1,161 @@
 .project {
-  max-width: 672px;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 28px;
-  padding-right: 28px;
-  padding-top: 56px;
-  padding-bottom: 56px;
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 8.5rem 0 2rem;
+}
+
+.back-link {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--mist);
+}
+
+.back-link:hover {
+  color: var(--ember);
+}
+
+.header {
+  margin: 2rem 0 2.5rem;
+}
+
+.type-chip {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ember);
+  border: 1px solid rgba(255, 140, 66, 0.4);
+  padding: 0.15rem 0.55rem;
+  margin-bottom: 1.1rem;
+}
+
+.title {
+  font-size: clamp(2.2rem, 5vw, 3.2rem);
+  font-weight: 800;
+  margin-bottom: 1.25rem;
+}
+
+.repo-link {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  letter-spacing: 0.06em;
+  color: var(--parchment);
+  border: 1px solid var(--line);
+  padding: 0.6rem 1.25rem;
+  transition: transform 120ms ease, box-shadow 120ms ease,
+    border-color 120ms ease;
+}
+
+.repo-link:hover {
+  color: var(--parchment);
+  border-color: var(--ember);
+  transform: translate(-2px, -2px);
+  box-shadow: var(--sprite-shadow);
 }
 
 .project-image {
-  max-width: 100%;
-  margin-bottom: 28px;
+  border: 1px solid var(--line);
+  background: var(--void-deep);
+  box-shadow: var(--sprite-shadow-storm);
+  margin-bottom: 3rem;
 }
 
-.button {
-  background: #fff;
+.body {
+  color: var(--parchment);
+}
+
+.body h1,
+.body h2,
+.body h3 {
+  margin-top: 2.5rem;
+}
+
+.body p,
+.body li {
+  color: rgba(239, 234, 224, 0.82);
+}
+
+.body hr {
   border: none;
-  display: flex;
-  align-items: center;
-  padding: 0.8rem;
-  border-radius: 6px;
-  font-family: 'Roboto', sans-serif;
+  height: 1px;
+  background: var(--line);
+  margin: 2.5rem 0;
+}
+
+.body table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0 0 1.5rem;
+  font-size: 0.95rem;
+}
+
+.body th {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
   font-weight: 500;
-  font-size: 1.4rem;
-  color: #fff;
-  letter-spacing: 0.05rem;
-  text-decoration: none;
-  display: inline-flex;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-align: left;
+  color: var(--storm);
+  border-bottom: 1px solid var(--line);
+  padding: 0.6rem 1rem 0.6rem 0;
 }
 
-.button:hover {
-  background: #262626;
+.body td {
+  color: rgba(239, 234, 224, 0.82);
+  border-bottom: 1px solid var(--line-faint);
+  padding: 0.6rem 1rem 0.6rem 0;
+  vertical-align: top;
 }
 
-.github {
-  background: rgb(99, 45, 208);
+.body a {
+  color: var(--storm);
+  text-decoration: underline;
+  text-decoration-color: var(--line);
+  text-underline-offset: 3px;
 }
 
-.github-logo {
-  margin-left: 0.7rem;
+.body a:hover {
+  color: var(--ember);
 }
 
-.top-links {
-  margin-top: 1.4rem;
-  margin-bottom: 1.4rem;
+.body pre {
+  background: var(--void-deep);
+  border: 1px solid var(--line-faint);
+  padding: 1.25rem;
+  overflow-x: auto;
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+
+.body code {
+  background: rgba(239, 234, 224, 0.08);
+  padding: 0.1em 0.35em;
+  font-size: 0.88em;
+}
+
+.body pre code {
+  background: none;
+  padding: 0;
+}
+
+.body blockquote {
+  margin: 0 0 1.25rem;
+  padding: 0.25rem 0 0.25rem 1.25rem;
+  border-left: 3px solid var(--ember);
+  color: var(--mist);
+}
+
+.body img {
+  border: 1px solid var(--line-faint);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .repo-link {
+    transition: none;
+  }
 }

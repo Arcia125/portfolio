@@ -3,24 +3,50 @@ import React from 'react';
 import * as styles from './about-me-section.module.css';
 import LayoutContainer from './layout-container';
 
-const AboutMeSection = ({ children }) => (
+const stack = [
+  'React',
+  'TypeScript',
+  'GraphQL',
+  'Node.js',
+  'React Native',
+  'WebGL',
+  'Python',
+  'Godot',
+];
+
+const AboutMeSection = () => (
   <LayoutContainer>
-    {children}
-    <section className={styles.aboutMeSection}>
-      <div>
-        <h2>ABOUT ME</h2>
-        <p>
-          I'm a self-taught Full Stack Engineer with deep expertise in
-          single-page applications. Over the years, I've refined my skills in
-          both frontend and backend development, specializing in technologies
-          like React, TypeScript, and GraphQL. Driven by curiosity and a love of
-          learning, I’ve built scalable, interactive web applications for
-          diverse projects—from gaming companions to complex business tools.
-        </p>
-        <p>
-          When I'm not coding, I'm exploring new frameworks, optimizing my work,
-          and contributing to open-source projects.
-        </p>
+    <section className={styles.aboutMeSection} id="about">
+      <p className="eyebrow">About</p>
+      <div className={styles.columns}>
+        <div className={styles.bio}>
+          <h2 className={styles.heading}>
+            Self-taught, curiosity-driven, shipping since day one.
+          </h2>
+          <p>
+            I'm a full stack engineer with deep expertise in single-page
+            applications. I've refined my skills across frontend and backend,
+            specializing in React, TypeScript, and GraphQL — building scalable,
+            interactive web apps that range from game companions to complex
+            business tools.
+          </p>
+          <p>
+            The same instincts run through my personal work: real-time
+            rendering, game AI, and interfaces that respond the moment you
+            touch them. When I'm not coding, I'm exploring new frameworks and
+            contributing to open source.
+          </p>
+        </div>
+        <div className={styles.stackPanel}>
+          <h3 className={styles.stackTitle}>Everyday tools</h3>
+          <ul className={styles.stackList}>
+            {stack.map(item => (
+              <li key={item} className={styles.stackItem}>
+                {item}
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
     </section>
   </LayoutContainer>
