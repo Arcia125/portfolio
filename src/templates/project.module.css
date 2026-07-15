@@ -27,7 +27,7 @@
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--ember);
-  border: 1px solid rgba(255, 140, 66, 0.4);
+  border: 1px solid var(--ember-line);
   padding: 0.15rem 0.55rem;
   margin-bottom: 1.1rem;
 }
@@ -36,6 +36,12 @@
   font-size: clamp(2.2rem, 5vw, 3.2rem);
   font-weight: 800;
   margin-bottom: 1.25rem;
+}
+
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
 }
 
 .repo-link {
@@ -76,7 +82,7 @@
 
 .body p,
 .body li {
-  color: rgba(239, 234, 224, 0.82);
+  color: var(--text-soft);
 }
 
 .body hr {
@@ -106,7 +112,7 @@
 }
 
 .body td {
-  color: rgba(239, 234, 224, 0.82);
+  color: var(--text-soft);
   border-bottom: 1px solid var(--line-faint);
   padding: 0.6rem 1rem 0.6rem 0;
   vertical-align: top;
@@ -133,7 +139,7 @@
 }
 
 .body code {
-  background: rgba(239, 234, 224, 0.08);
+  background: var(--surface-tint);
   padding: 0.1em 0.35em;
   font-size: 0.88em;
 }

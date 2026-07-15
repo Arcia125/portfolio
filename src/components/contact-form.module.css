@@ -52,7 +52,7 @@
 }
 
 .input::placeholder {
-  color: rgba(154, 147, 184, 0.55);
+  color: var(--text-placeholder);
 }
 
 .input:focus {
@@ -68,7 +68,7 @@
   letter-spacing: 0.06em;
   cursor: pointer;
   background: var(--ember);
-  color: var(--void-deep);
+  color: var(--on-accent);
   border: 1px solid var(--ember);
   padding: 0.85rem 1.75rem;
   box-shadow: var(--sprite-shadow);
@@ -77,7 +77,7 @@
 
 .button:hover {
   transform: translate(-2px, -2px);
-  box-shadow: 8px 8px 0 rgba(255, 140, 66, 0.28);
+  box-shadow: var(--sprite-shadow-hover);
 }
 
 .success {

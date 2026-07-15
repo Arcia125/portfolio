@@ -70,7 +70,7 @@ textarea {
 
 ::selection {
   background: var(--ember);
-  color: var(--void-deep);
+  color: var(--on-accent);
 }
 
 :focus-visible {

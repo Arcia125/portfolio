@@ -42,7 +42,7 @@
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--ember);
-  border: 1px solid rgba(255, 140, 66, 0.4);
+  border: 1px solid var(--ember-line);
   padding: 0.15rem 0.55rem;
   margin-bottom: 0.9rem;
 }

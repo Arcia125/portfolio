@@ -4,7 +4,7 @@
   left: 0;
   right: 0;
   z-index: 10;
-  background: rgba(23, 20, 48, 0.82);
+  background: var(--nav-bg);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   border-bottom: 1px solid var(--line-faint);

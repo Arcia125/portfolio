@@ -100,14 +100,14 @@
 
 .primaryAction {
   background: var(--ember);
-  color: var(--void-deep);
+  color: var(--on-accent);
   box-shadow: var(--sprite-shadow);
 }
 
 .primaryAction:hover {
-  color: var(--void-deep);
+  color: var(--on-accent);
   transform: translate(-2px, -2px);
-  box-shadow: 8px 8px 0 rgba(255, 140, 66, 0.28);
+  box-shadow: var(--sprite-shadow-hover);
 }
 
 .secondaryAction {

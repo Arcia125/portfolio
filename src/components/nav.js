@@ -4,6 +4,7 @@ import { Link } from 'gatsby';
 
 import './nav.css';
 import { layout } from '../constants/layout';
+import { ThemeToggle } from './theme-toggle';
 
 const Nav = ({ siteTitle }) => (
   <nav className="main-site-navigation">
@@ -36,6 +37,7 @@ const Nav = ({ siteTitle }) => (
         >
           GitHub
         </a>
+        <ThemeToggle />
       </div>
     </div>
   </nav>

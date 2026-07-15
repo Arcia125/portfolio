@@ -1,0 +1,35 @@
+/* Styled with global.css tokens so it works on marketing and blog pages. */
+
+.theme-toggle {
+  display: inline-flex;
+  align-items: stretch;
+  border: 1px solid var(--line);
+}
+
+.theme-toggle button {
+  appearance: none;
+  border: 0;
+  background: transparent;
+  color: var(--mist);
+  font-family: var(--font-pixel);
+  font-size: 0.55rem;
+  letter-spacing: 0.1em;
+  line-height: 1;
+  padding: 0.4rem 0.5rem;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+}
+
+.theme-toggle button + button {
+  border-left: 1px solid var(--line-faint);
+}
+
+.theme-toggle button:hover {
+  color: var(--ember);
+}
+
+.theme-toggle button[aria-pressed='true'] {
+  background: var(--ember);
+  color: var(--on-accent);
+}

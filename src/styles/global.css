@@ -2,7 +2,9 @@
    not a CSS @import, so they don't serialize behind this stylesheet. */
 
 :root {
-  /* Palette — twilight arcade */
+  /* Palette — twilight arcade (dark, the default). The resolved color mode is
+     stamped on html[data-theme] by the no-flash script in gatsby-ssr.js and by
+     src/theme/color-mode.js at runtime; light values are overridden below. */
   --void: #171430;
   --void-deep: #100e22;
   --dusk: #211d3d;
@@ -14,6 +16,12 @@
   --mist: #9a93b8;
   --line: rgba(239, 234, 224, 0.12);
   --line-faint: rgba(239, 234, 224, 0.07);
+  --nav-bg: rgba(23, 20, 48, 0.82);
+  --on-accent: #100e22;
+  --text-soft: rgba(239, 234, 224, 0.82);
+  --text-placeholder: rgba(154, 147, 184, 0.55);
+  --surface-tint: rgba(239, 234, 224, 0.08);
+  --ember-line: rgba(255, 140, 66, 0.4);
 
   /* Type */
   --font-display: 'Bricolage Grotesque', 'Segoe UI', sans-serif;
@@ -24,4 +32,31 @@
   /* Signature sprite shadow */
   --sprite-shadow: 6px 6px 0 rgba(255, 140, 66, 0.22);
   --sprite-shadow-storm: 6px 6px 0 rgba(127, 168, 255, 0.2);
+  --sprite-shadow-hover: 8px 8px 0 rgba(255, 140, 66, 0.28);
+}
+
+/* Light mode — "paper arcade". Same bones, parchment paper background with
+   ink text; ember/storm shift darker to keep contrast. Values mirror the
+   theme-ui light palette in src/gatsby-plugin-theme-ui/index.js. */
+html[data-theme='light'] {
+  --void: #faf6ec;
+  --void-deep: #f1ead8;
+  --dusk: #fffcf2;
+  --dusk-raised: #ffffff;
+  --parchment: #262239;
+  --ember: #c25e17;
+  --ember-deep: #a04a0f;
+  --storm: #3d5fd0;
+  --mist: #6a6386;
+  --line: rgba(38, 34, 57, 0.22);
+  --line-faint: rgba(38, 34, 57, 0.1);
+  --nav-bg: rgba(250, 246, 236, 0.85);
+  --on-accent: #faf6ec;
+  --text-soft: rgba(38, 34, 57, 0.85);
+  --text-placeholder: rgba(106, 99, 134, 0.6);
+  --surface-tint: rgba(38, 34, 57, 0.07);
+  --ember-line: rgba(194, 94, 23, 0.45);
+  --sprite-shadow: 6px 6px 0 rgba(194, 94, 23, 0.24);
+  --sprite-shadow-storm: 6px 6px 0 rgba(61, 95, 208, 0.2);
+  --sprite-shadow-hover: 8px 8px 0 rgba(194, 94, 23, 0.3);
 }
