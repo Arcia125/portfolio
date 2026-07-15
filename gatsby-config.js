@@ -1,8 +1,9 @@
 module.exports = {
   siteMetadata: {
     title: `Kevin Hallett`,
-    description: `Web development portfolio.`,
+    description: `Kevin Hallett — frontend-focused software engineer building interactive, real-time web applications with React, TypeScript, and GraphQL.`,
     author: `Kevin Hallett`,
+    siteUrl: `https://kevinmhallett.com`,
   },
   plugins: [
     // `gatsby-plugin-react-helmet`,
@@ -36,8 +37,8 @@ module.exports = {
         name: `Kevin Hallett - Software Engineer - Personal Portfolio`,
         short_name: `Kevin Hallett - Software Engineer`,
         start_url: `/`,
-        background_color: `rgb(99, 45, 208)`,
-        theme_color: `rgb(99, 45, 208)`,
+        background_color: `#171430`,
+        theme_color: `#171430`,
         display: `minimal-ui`,
         icon: `src/images/favicon.png`, // This path is relative to the root of the site.
       },
@@ -56,10 +57,13 @@ module.exports = {
         basePath: `/blog`,
       },
     },
+    `gatsby-plugin-sitemap`,
     {
-      resolve: `gatsby-plugin-google-analytics`,
+      // gatsby-plugin-google-analytics only speaks the retired Universal
+      // Analytics API; a G- measurement ID requires gtag.js
+      resolve: `gatsby-plugin-google-gtag`,
       options: {
-        trackingId: 'G-LB5HKHF5V7',
+        trackingIds: ['G-LB5HKHF5V7'],
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality

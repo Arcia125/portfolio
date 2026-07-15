@@ -3,20 +3,36 @@ import PropTypes from "prop-types"
 import Helmet from "react-helmet"
 import { StaticQuery, graphql } from "gatsby"
 
-function SEO({ description, lang, meta, keywords, title }) {
+function SEO({
+  description,
+  lang,
+  meta,
+  keywords,
+  title,
+  pathname,
+  image,
+  standaloneTitle,
+  schema,
+}) {
   return (
     <StaticQuery
       query={detailsQuery}
       render={data => {
+        const { siteUrl } = data.site.siteMetadata
         const metaDescription =
           description || data.site.siteMetadata.description
+        const canonical = pathname ? `${siteUrl}${pathname}` : null
+        const imageUrl = `${siteUrl}${image}`
         return (
           <Helmet
             htmlAttributes={{
               lang,
             }}
             title={title}
-            titleTemplate={`%s | ${data.site.siteMetadata.title}`}
+            titleTemplate={
+              standaloneTitle ? `%s` : `%s | ${data.site.siteMetadata.title}`
+            }
+            link={canonical ? [{ rel: `canonical`, href: canonical }] : []}
             meta={[
               {
                 name: `description`,
@@ -35,8 +51,20 @@ function SEO({ description, lang, meta, keywords, title }) {
                 content: `website`,
               },
               {
+                property: `og:image`,
+                content: imageUrl,
+              },
+              {
+                property: `og:image:width`,
+                content: `1200`,
+              },
+              {
+                property: `og:image:height`,
+                content: `630`,
+              },
+              {
                 name: `twitter:card`,
-                content: `summary`,
+                content: `summary_large_image`,
               },
               {
                 name: `twitter:creator`,
@@ -50,7 +78,21 @@ function SEO({ description, lang, meta, keywords, title }) {
                 name: `twitter:description`,
                 content: metaDescription,
               },
+              {
+                name: `twitter:image`,
+                content: imageUrl,
+              },
             ]
+              .concat(
+                canonical
+                  ? [
+                      {
+                        property: `og:url`,
+                        content: canonical,
+                      },
+                    ]
+                  : []
+              )
               .concat(
                 keywords.length > 0
                   ? {
@@ -60,7 +102,13 @@ function SEO({ description, lang, meta, keywords, title }) {
                   : []
               )
               .concat(meta)}
-          />
+          >
+            {schema && (
+              <script type="application/ld+json">
+                {JSON.stringify(schema)}
+              </script>
+            )}
+          </Helmet>
         )
       }}
     />
@@ -71,6 +119,8 @@ SEO.defaultProps = {
   lang: `en`,
   meta: [],
   keywords: [],
+  image: `/og-image.png`,
+  standaloneTitle: false,
 }
 
 SEO.propTypes = {
@@ -79,6 +129,10 @@ SEO.propTypes = {
   meta: PropTypes.array,
   keywords: PropTypes.arrayOf(PropTypes.string),
   title: PropTypes.string.isRequired,
+  pathname: PropTypes.string,
+  image: PropTypes.string,
+  standaloneTitle: PropTypes.bool,
+  schema: PropTypes.object,
 }
 
 export default SEO
@@ -90,6 +144,7 @@ const detailsQuery = graphql`
         title
         description
         author
+        siteUrl
       }
     }
   }
