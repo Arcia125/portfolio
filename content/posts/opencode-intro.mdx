@@ -1,14 +1,14 @@
 ---
-title: "OpenCode: The Open Source Claude Code Alternative (5-Minute Setup)"
+title: "OpenCode: The Open Source Claude Code Alternative"
 date: 2025-12-29
 tags: ["AI", "Development Tools", "OpenCode", "Terminal", "Claude Code Alternative"]
 ---
 
 ![OpenCode terminal interface showing the AI assistant in action](../assets/opencode.png)
 
-Tired of being locked into expensive AI coding subscriptions? Frustrated that your Claude Code or Copilot investment only works with one provider? **OpenCode** is the open source answer: a terminal-native AI coding agent with 26,000+ GitHub stars that works with your existing Claude Pro subscription, 75+ other providers, or completely free models.
+Tired of being locked into expensive AI coding subscriptions? Frustrated that your Claude Code or Copilot investment only works with one provider? **OpenCode** is the open source answer: a terminal-native AI coding agent with 190,000+ GitHub stars that works with your existing Claude Pro subscription, 75+ other providers, or completely free models.
 
-Here is how to get productive in five minutes.
+Here is how to get productive with it.
 
 ## What Makes OpenCode Different
 
@@ -16,11 +16,11 @@ OpenCode is not just another AI wrapper. It is a full coding agent that understa
 
 - **Use your existing subscriptions** - Claude Pro/Max, OpenAI, or GitHub Copilot all work
 - **75+ LLM providers** - Switch between cloud, local (Ollama), or free models instantly
-- **LSP integration** - Real semantic understanding of your code, not just text matching
+- **LSP integration** - Real semantic understanding of your code, not just text matching (opt-in, enable it in your config)
 - **Plan vs Build workflow** - Safely preview changes before applying them
 - **Undo everything** - Made a mistake? One command reverts it
 
-## 5-Minute Setup
+## Setup
 
 ### 1. Install OpenCode
 
@@ -35,7 +35,7 @@ Or use your package manager:
 npm i -g opencode-ai
 
 # Homebrew
-brew install sst/tap/opencode
+brew install anomalyco/tap/opencode
 
 # Chocolatey (Windows)
 choco install opencode
@@ -87,9 +87,9 @@ The workflow: Start in Plan mode, review the approach, then switch to Build when
 
 ## Choose Your Model
 
-**Free**: Sign up for OpenCode Zen and use GLM-4.7. It is genuinely capable for 80% of coding tasks and costs nothing.
+**Free**: Sign up for OpenCode Zen and pick something from its free list. The lineup rotates as vendors cycle models in and out while gathering feedback, so check [opencode.ai/zen](https://opencode.ai/zen) for what is currently free. These models are genuinely capable for a lot of everyday coding work and cost nothing.
 
-**Best quality**: Connect your Claude Pro/Max or GPT-4 subscription. Same workflow, premium models.
+**Best quality**: Connect your Claude Pro/Max or ChatGPT Plus/Pro subscription. Same workflow, premium models.
 
 **Maximum privacy**: Run local models through Ollama. Your code never leaves your machine.
 
@@ -99,7 +99,7 @@ The key insight: your workflow stays identical regardless of which model you use
 
 I was tired of the lock-in. Claude Code only works with Claude. Copilot only works with OpenAI models. Every tool wanted its own subscription.
 
-OpenCode flipped that: I use my existing Claude Pro subscription when I need quality, GLM-4.7 for quick tasks, and local models for client work that cannot touch external APIs. Same interface, same commands, same muscle memory.
+OpenCode flipped that: I use my existing Claude Pro subscription when I need quality, a free Zen model for quick tasks, and local models for client work that cannot touch external APIs. Same interface, same commands, same muscle memory.
 
 That flexibility is worth the switch.
 

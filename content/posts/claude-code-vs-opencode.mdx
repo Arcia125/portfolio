@@ -1,0 +1,105 @@
+---
+title: "Claude Code vs OpenCode (2026): Which AI Coding Agent Should You Use?"
+date: 2026-07-15
+tags: ["AI", "Development Tools", "Claude Code", "OpenCode", "Comparison"]
+---
+
+Terminal-based AI coding agents have gone from novelty to daily driver for a lot of developers, and two names come up constantly: **Claude Code**, Anthropic's official CLI agent, and **OpenCode**, the open source alternative that works with almost any model provider. I use both, and the right choice depends less on raw capability and more on how you pay for AI, how much you care about model flexibility, and how much you want to customize your setup.
+
+Here's a practical comparison to help you pick.
+
+## TL;DR
+
+- **Choose Claude Code** if you want the most polished agentic experience, you're already paying for Claude Pro/Max, and you don't mind being tied to Anthropic's models.
+- **Choose OpenCode** if you want provider flexibility (75+ providers, including local models via Ollama), open source transparency, or you want to reuse subscriptions you already have.
+- **You can run both.** They read similar project conventions (agent instruction files like `CLAUDE.md` / `AGENTS.md`), so trying each on a real project costs you almost nothing.
+
+## What They Have in Common
+
+Both tools occupy the same niche: an AI agent that lives in your terminal, reads your codebase, edits files, runs commands, and iterates until the task is done. Both support:
+
+- **Full codebase awareness** - they search and read your project rather than working from a single pasted snippet
+- **Agentic workflows** - multi-step tasks like "add a feature, run the tests, fix the failures"
+- **Project instruction files** - persistent context and conventions the agent follows on every run
+- **Plan-before-build modes** - preview an approach before any files change
+- **Git integration** - commits, branches, and PR workflows from inside the session
+
+If you've used one, the other will feel familiar within minutes.
+
+## Where Claude Code Wins
+
+### Polish and first-party model integration
+
+Claude Code is built by Anthropic for Anthropic's models, and it shows. The agent behavior, permission prompts, context management, and tool use are tuned together as one product. When a new Claude model ships, Claude Code supports it on day one with sensible defaults.
+
+### The ecosystem
+
+Claude Code has grown a serious extension surface: hooks for automating behavior around tool calls, subagents for delegating work, skills (reusable instruction packages), plugins, MCP server support, and IDE integrations for VS Code and JetBrains. If you want to build a customized agent workflow on top of a supported foundation, this is the deepest option.
+
+### Predictable quality
+
+Because the model lineup is fixed, you never wonder whether a bad session was the tool or the model you happened to route through. That consistency matters when you're using an agent for real work on deadline.
+
+## Where OpenCode Wins
+
+### Provider freedom
+
+This is OpenCode's headline feature. It works with Anthropic, OpenAI, Google, and dozens of other providers - plus local models through Ollama. You can use a frontier model for hard refactors and a cheap or free model for boilerplate, switching mid-project. As I covered in my [OpenCode setup guide](/blog/opencode-intro), getting it installed and authenticated is refreshingly painless.
+
+### Open source
+
+OpenCode's code is public. You can read exactly what it sends to providers, patch behavior you don't like, and self-host everything. For teams with strict data policies, that transparency can be the deciding factor.
+
+### Reusing subscriptions you already pay for
+
+OpenCode can authenticate against a Claude Pro/Max subscription, GitHub Copilot, or OpenAI account you already have. If your budget is one AI subscription, OpenCode lets that one subscription power your terminal agent too.
+
+### First-class LSP integration
+
+OpenCode leans on language servers for semantic code understanding - jump-to-definition-level accuracy rather than text search alone. It is disabled by default now, so you have to switch it on in your config, but once enabled it feeds real diagnostics back to the agent. Claude Code has been closing this gap, but OpenCode made it a core feature early.
+
+## Pricing Comparison
+
+| | Claude Code | OpenCode |
+|---|---|---|
+| Tool cost | Free CLI | Free, open source |
+| Model access | Claude Pro/Max subscription or API pay-as-you-go | Bring your own: any provider's subscription, API keys, or free/local models |
+| Cheapest real setup | Claude Pro | Free local models via Ollama |
+
+The honest caveat on local models: they're genuinely free, but current local models are noticeably weaker than frontier models for complex agentic work. They're fine for autocomplete-grade tasks; for multi-file refactors you'll want a hosted frontier model regardless of which tool you use.
+
+## Which One Should You Pick?
+
+**Pick Claude Code if:**
+
+- You're already in the Anthropic ecosystem (Claude Pro/Max)
+- You want the most refined out-of-the-box agent experience
+- You plan to build on hooks, skills, subagents, or the Agent SDK
+- Consistency matters more to you than flexibility
+
+**Pick OpenCode if:**
+
+- You want to mix providers or run local models
+- Open source is a requirement, not a preference
+- You're cost-sensitive and want to stretch one existing subscription
+- You like tinkering with your tooling
+
+**My take:** if you can only install one and you're doing serious daily work, Claude Code's polish gives it the edge. But OpenCode is the easiest recommendation I can make to anyone who wants to try terminal AI agents without committing to a specific vendor - and it keeps the whole category honest.
+
+## FAQ
+
+**Can I use Claude models in OpenCode?**
+Yes. OpenCode supports Anthropic via API keys and can also authenticate with a Claude Pro/Max subscription.
+
+**Do they work on Windows?**
+Both do. Claude Code ships native Windows support, and OpenCode installs via npm or Chocolatey. Both also run fine under WSL if you prefer a Linux environment.
+
+**Will they mess up my code?**
+Both default to asking permission before running commands or editing files, both work best on a git branch, and OpenCode has a built-in undo. Standard advice applies: commit early, review diffs.
+
+**Is OpenCode "as good as" Claude Code with the same model?**
+Close, and getting closer. With the same Claude model behind both, results are broadly similar; Claude Code still tends to be better tuned for long multi-step tasks since the harness and model are developed together.
+
+---
+
+If you're new to either tool, start with my [OpenCode setup guide](/blog/opencode-intro), or grab Claude Code with `npm install -g @anthropic-ai/claude-code` and run it in a repo you know well. The fastest way to form an opinion is one real task in each.
