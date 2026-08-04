@@ -54,7 +54,7 @@ OpenCode's code is public. You can read exactly what it sends to providers, patc
 
 OpenCode can authenticate against a ChatGPT Plus/Pro, GitHub Copilot, or GitLab Duo subscription you already have, with no API key and no per-token billing. If your budget is one AI subscription and it is one of those, OpenCode lets it power your terminal agent too.
 
-Anthropic is the loud exception. It prohibits third-party applications from authenticating with Claude Free, Pro, or Max subscriptions, and OpenCode removed its Anthropic OAuth plugin in March 2026 after a legal request. Claude models still run in OpenCode, but only through a Claude Console API key billed per token. So if your one subscription is Claude, this particular advantage does not apply to you and Claude Code is where that money goes furthest.
+The exception is Anthropic, which does not allow third-party tools to authenticate with Claude subscriptions. Claude models still run in OpenCode, but through a Claude Console API key billed per token. So if your one subscription is Claude, this particular advantage does not apply to you and Claude Code is where that money goes furthest.
 
 ### First-class LSP integration
 
@@ -91,7 +91,7 @@ The honest caveat on local models: they're genuinely free, but current local mod
 ## FAQ
 
 **Can I use Claude models in OpenCode?**
-Yes, but only with an Anthropic API key billed per token. You cannot point a Claude Pro or Max subscription at it. Anthropic prohibits third-party applications from authenticating with consumer Claude subscriptions, and OpenCode removed its Anthropic OAuth support in March 2026 in response. Community plugins that work around this exist, but they violate Anthropic's terms.
+Yes, with an Anthropic API key billed per token. Claude Pro and Max subscriptions only work inside Anthropic's own tools, so they cannot be pointed at OpenCode. Community plugins that work around this exist, but they are against Anthropic's terms.
 
 **Do they work on Windows?**
 Both do. Claude Code ships native Windows support, and OpenCode installs via npm or Chocolatey. Both also run fine under WSL if you prefer a Linux environment.

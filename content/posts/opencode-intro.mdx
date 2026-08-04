@@ -52,7 +52,7 @@ opencode auth login
 Select your provider. What you can authenticate with depends on which one:
 
 - **Subscriptions that work directly**: ChatGPT Plus/Pro, GitHub Copilot, and GitLab Duo. No API key, no per-token billing. If you already pay for one of these, this is the cheapest good setup available.
-- **Anthropic**: API key only. Anthropic prohibits third-party applications from authenticating with Claude Free, Pro, or Max subscriptions, and OpenCode removed its Anthropic OAuth plugin in v1.3.0 following a legal request. You can still run Claude models here, but you pay per token with a key from the Claude Console. If Claude is your only AI subscription, it goes further inside Claude Code itself.
+- **Anthropic**: API key only. Anthropic does not allow third-party tools to authenticate with Claude subscriptions, so Claude models run here on per-token billing with a key from the Claude Console. If Claude is your main subscription, it goes further inside Claude Code itself.
 - **Everyone else**: an API key from the provider, or sign in to OpenCode Zen for a curated list including free options.
 
 ### 3. Initialize Your Project
@@ -105,11 +105,11 @@ The key insight: your workflow stays identical regardless of which model you use
 
 I was tired of the lock-in. Claude Code only works with Claude. Copilot only works with OpenAI models. Every tool wanted its own subscription.
 
-Then Anthropic proved the point for me. In February 2026 it confirmed that Claude Free, Pro, and Max subscriptions cannot be used to authenticate third-party applications, and in March OpenCode merged a pull request titled "anthropic legal requests" that stripped the Anthropic OAuth plugin out entirely. Anyone routing a Claude Max subscription through a terminal agent they did not buy from Anthropic lost that overnight.
+OpenCode separates the tool from the model. I use a frontier model for hard problems, a free Zen model for quick tasks, and local models through Ollama for client work that cannot touch external APIs. Same interface, same commands, same muscle memory, whichever model is behind it.
 
-That is exactly the lock-in I switched to avoid, and it is the clearest argument I can make for why the switch was worth it. My setup did not break. It re-routed. ChatGPT Plus for quality work, a free Zen model for quick tasks, and local models through Ollama for client work that cannot touch external APIs. Same interface, same commands, same muscle memory. Only the provider behind it changed.
+The model landscape does not sit still. Models leapfrog each other every few months, prices move, and provider policies change. With a provider-agnostic tool, adapting to any of that means editing a line of config instead of learning a new tool.
 
-A tool that treats providers as interchangeable survives a provider changing its mind. A tool welded to one vendor does not.
+That flexibility is worth the switch.
 
 ---
 
