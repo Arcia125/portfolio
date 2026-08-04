@@ -10,8 +10,8 @@ Here's a practical comparison to help you pick.
 
 ## TL;DR
 
-- **Choose Claude Code** if you want the most polished agentic experience, you're already paying for Claude Pro/Max, and you don't mind being tied to Anthropic's models.
-- **Choose OpenCode** if you want provider flexibility (75+ providers, including local models via Ollama), open source transparency, or you want to reuse subscriptions you already have.
+- **Choose Claude Code** if you want the most polished agentic experience, you're already paying for Claude Pro/Max, and you don't mind being tied to Anthropic's models. As of 2026 it is also the only agent that can use a Claude subscription at all.
+- **Choose OpenCode** if you want provider flexibility (75+ providers, including local models via Ollama), open source transparency, or you want to reuse a ChatGPT Plus or Copilot subscription you already pay for.
 - **You can run both.** They read similar project conventions (agent instruction files like `CLAUDE.md` / `AGENTS.md`), so trying each on a real project costs you almost nothing.
 
 ## What They Have in Common
@@ -52,7 +52,9 @@ OpenCode's code is public. You can read exactly what it sends to providers, patc
 
 ### Reusing subscriptions you already pay for
 
-OpenCode can authenticate against a Claude Pro/Max subscription, GitHub Copilot, or OpenAI account you already have. If your budget is one AI subscription, OpenCode lets that one subscription power your terminal agent too.
+OpenCode can authenticate against a ChatGPT Plus/Pro, GitHub Copilot, or GitLab Duo subscription you already have, with no API key and no per-token billing. If your budget is one AI subscription and it is one of those, OpenCode lets it power your terminal agent too.
+
+Anthropic is the loud exception. It prohibits third-party applications from authenticating with Claude Free, Pro, or Max subscriptions, and OpenCode removed its Anthropic OAuth plugin in March 2026 after a legal request. Claude models still run in OpenCode, but only through a Claude Console API key billed per token. So if your one subscription is Claude, this particular advantage does not apply to you and Claude Code is where that money goes furthest.
 
 ### First-class LSP integration
 
@@ -63,7 +65,7 @@ OpenCode leans on language servers for semantic code understanding - jump-to-def
 | | Claude Code | OpenCode |
 |---|---|---|
 | Tool cost | Free CLI | Free, open source |
-| Model access | Claude Pro/Max subscription or API pay-as-you-go | Bring your own: any provider's subscription, API keys, or free/local models |
+| Model access | Claude Pro/Max subscription or API pay-as-you-go | Bring your own: ChatGPT Plus/Copilot/GitLab Duo subscriptions, API keys (required for Claude), or free/local models |
 | Cheapest real setup | Claude Pro | Free local models via Ollama |
 
 The honest caveat on local models: they're genuinely free, but current local models are noticeably weaker than frontier models for complex agentic work. They're fine for autocomplete-grade tasks; for multi-file refactors you'll want a hosted frontier model regardless of which tool you use.
@@ -72,7 +74,7 @@ The honest caveat on local models: they're genuinely free, but current local mod
 
 **Pick Claude Code if:**
 
-- You're already in the Anthropic ecosystem (Claude Pro/Max)
+- You're already paying for Claude Pro/Max (it is now the only agent that can use that subscription)
 - You want the most refined out-of-the-box agent experience
 - You plan to build on hooks, skills, subagents, or the Agent SDK
 - Consistency matters more to you than flexibility
@@ -89,7 +91,7 @@ The honest caveat on local models: they're genuinely free, but current local mod
 ## FAQ
 
 **Can I use Claude models in OpenCode?**
-Yes. OpenCode supports Anthropic via API keys and can also authenticate with a Claude Pro/Max subscription.
+Yes, but only with an Anthropic API key billed per token. You cannot point a Claude Pro or Max subscription at it. Anthropic prohibits third-party applications from authenticating with consumer Claude subscriptions, and OpenCode removed its Anthropic OAuth support in March 2026 in response. Community plugins that work around this exist, but they violate Anthropic's terms.
 
 **Do they work on Windows?**
 Both do. Claude Code ships native Windows support, and OpenCode installs via npm or Chocolatey. Both also run fine under WSL if you prefer a Linux environment.

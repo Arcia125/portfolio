@@ -6,7 +6,9 @@ tags: ["AI", "Development Tools", "OpenCode", "Terminal", "Claude Code Alternati
 
 ![OpenCode terminal interface showing the AI assistant in action](../assets/opencode.png)
 
-Tired of being locked into expensive AI coding subscriptions? Frustrated that your Claude Code or Copilot investment only works with one provider? **OpenCode** is the open source answer: a terminal-native AI coding agent with 190,000+ GitHub stars that works with your existing Claude Pro subscription, 75+ other providers, or completely free models.
+*Updated August 2026: Anthropic no longer permits third-party tools to authenticate with Claude Pro or Max subscriptions. The provider guidance below reflects the current state.*
+
+Tired of being locked into expensive AI coding subscriptions? Frustrated that your Copilot investment only works with one provider? **OpenCode** is the open source answer: a terminal-native AI coding agent with 190,000+ GitHub stars that works with the ChatGPT Plus or Copilot subscription you already pay for, 75+ providers by API key, or completely free models.
 
 Here is how to get productive with it.
 
@@ -14,7 +16,7 @@ Here is how to get productive with it.
 
 OpenCode is not just another AI wrapper. It is a full coding agent that understands your codebase:
 
-- **Use your existing subscriptions** - Claude Pro/Max, OpenAI, or GitHub Copilot all work
+- **Use your existing subscriptions** - ChatGPT Plus/Pro, GitHub Copilot, and GitLab Duo authenticate directly (Anthropic is the exception, see below)
 - **75+ LLM providers** - Switch between cloud, local (Ollama), or free models instantly
 - **LSP integration** - Real semantic understanding of your code, not just text matching (opt-in, enable it in your config)
 - **Plan vs Build workflow** - Safely preview changes before applying them
@@ -47,7 +49,11 @@ choco install opencode
 opencode auth login
 ```
 
-Select your provider and enter your API key. **Pro tip**: If you have Claude Pro or Max, select Anthropic. Your subscription works here and it is the most cost-effective option.
+Select your provider. What you can authenticate with depends on which one:
+
+- **Subscriptions that work directly**: ChatGPT Plus/Pro, GitHub Copilot, and GitLab Duo. No API key, no per-token billing. If you already pay for one of these, this is the cheapest good setup available.
+- **Anthropic**: API key only. Anthropic prohibits third-party applications from authenticating with Claude Free, Pro, or Max subscriptions, and OpenCode removed its Anthropic OAuth plugin in v1.3.0 following a legal request. You can still run Claude models here, but you pay per token with a key from the Claude Console. If Claude is your only AI subscription, it goes further inside Claude Code itself.
+- **Everyone else**: an API key from the provider, or sign in to OpenCode Zen for a curated list including free options.
 
 ### 3. Initialize Your Project
 
@@ -89,7 +95,7 @@ The workflow: Start in Plan mode, review the approach, then switch to Build when
 
 **Free**: Sign up for OpenCode Zen and pick something from its free list. The lineup rotates as vendors cycle models in and out while gathering feedback, so check [opencode.ai/zen](https://opencode.ai/zen) for what is currently free. These models are genuinely capable for a lot of everyday coding work and cost nothing.
 
-**Best quality**: Connect your Claude Pro/Max or ChatGPT Plus/Pro subscription. Same workflow, premium models.
+**Best quality**: Connect a ChatGPT Plus/Pro subscription, or bring an API key for Claude or Gemini and pay per token. Same workflow, premium models.
 
 **Maximum privacy**: Run local models through Ollama. Your code never leaves your machine.
 
@@ -99,9 +105,11 @@ The key insight: your workflow stays identical regardless of which model you use
 
 I was tired of the lock-in. Claude Code only works with Claude. Copilot only works with OpenAI models. Every tool wanted its own subscription.
 
-OpenCode flipped that: I use my existing Claude Pro subscription when I need quality, a free Zen model for quick tasks, and local models for client work that cannot touch external APIs. Same interface, same commands, same muscle memory.
+Then Anthropic proved the point for me. In February 2026 it confirmed that Claude Free, Pro, and Max subscriptions cannot be used to authenticate third-party applications, and in March OpenCode merged a pull request titled "anthropic legal requests" that stripped the Anthropic OAuth plugin out entirely. Anyone routing a Claude Max subscription through a terminal agent they did not buy from Anthropic lost that overnight.
 
-That flexibility is worth the switch.
+That is exactly the lock-in I switched to avoid, and it is the clearest argument I can make for why the switch was worth it. My setup did not break. It re-routed. ChatGPT Plus for quality work, a free Zen model for quick tasks, and local models through Ollama for client work that cannot touch external APIs. Same interface, same commands, same muscle memory. Only the provider behind it changed.
+
+A tool that treats providers as interchangeable survives a provider changing its mind. A tool welded to one vendor does not.
 
 ---
 
